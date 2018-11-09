@@ -1,10 +1,7 @@
-# **-----------------------------------------------------**
-# **// Template for the questions in our test bank:    //**
-# **-----------------------------------------------------**
-## **// A question must be marked with a '?' symbol     //**
-## **// Correct answer must be marked with a '<' symbol //**
-## **// Separate each question block with a '$' symbol  //**
-## **-----------------------------------------------------**
+#  ** Template for the questions in our test bank:    **
+## ** A question must be marked with a '?' symbol     **
+## ** Correct answer must be marked with a '<' symbol **
+## ** Separate each question block with a '$' symbol  **
 
 * ? What is a static method?
 * (A) Answer 1
