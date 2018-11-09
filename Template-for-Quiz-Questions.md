@@ -1,7 +1,8 @@
 # Template for the questions in our test bank:    
-**A question must be marked with a '?' symbol and remain on 1 line     **
-**Correct answer must be marked with a '<' symbol and**
-**Separate each question block with a '$' symbol  **
+A question must be marked with a '?' symbol and remain on 1 line. 
+Correct answer must be marked with a '<' symbol, each answer should also be 1 line.
+Separate each question block with a '$' symbol.
+***
 
 * ? What is a static method?
 * (A) Answer 1
