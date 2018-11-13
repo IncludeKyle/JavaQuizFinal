@@ -4,7 +4,7 @@ Final group project: Generates quiz of 40 questions randomly selected from a tex
 Sources:
    questionBank.txt
 
-Classes: 
-   QuestionBankParser (public)
-   ProctorTest        (public)
-   TestAnalysis       (abstract/static)
+Classes:  
+   QuestionBankParser (public)  
+   ProctorTest        (public)  
+   TestAnalysis       (abstract/static)  
