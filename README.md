@@ -2,7 +2,9 @@
 Final group project: Generates quiz of 40 questions randomly selected from a text file of 100 questions.
 
 Sources:
-   QuizQuestions.txt
+   questionBank.txt
 
 Classes: 
-   BuildQuiz
+   QuestionBankParser (public)
+   ProctorTest        (public)
+   TestAnalysis       (abstract/static)
