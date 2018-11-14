@@ -3,18 +3,13 @@ A question must be marked with a '?' symbol and remain on 1 line.
 A Correct answer must also be only 1 line and be marked with a '<' symbol.  
 Separate each question block with a '$' symbol.  
 ***
-* ? What is a static method?
-* (A) Answer 1
-* (B) Answer 2<
-* (C) Answer 3
-* $
-* ? Why use a lambda expression?
-* (A) Answer 1<
-* (B) Answer 2
-* (C) Answer 3
-* $
-* ? What is the purpose of the private access specifier?
-* (A) Answer 1
-* (B) Answer 2
-* (C) Answer 3<
-* $
+* ? What is a static method?  
+* (A) Answer 1  
+* (B) Answer 2<  
+* (C) Answer 3  
+* (D) Answer 4  
+* $  
+* ? This is a true false question?  
+* (T) Answer 1<  
+* (F) Answer 2  
+* $  
