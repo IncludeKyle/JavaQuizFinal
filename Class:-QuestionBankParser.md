@@ -1,4 +1,4 @@
-# Class: BuildQuiz  
+# Class: QuestionBankParser   
 ***
    This class will use a text parser to read the first line in the file.  
 If the text parser detects the question mark symbol '?' as the first character in the line  
