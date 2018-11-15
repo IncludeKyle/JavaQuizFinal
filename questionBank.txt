@@ -1,1 +1,28 @@
-
+? What is a character literal representing the upper case letter A? 
+C14
+S2
+(A) 65
+(B) 'A'<
+(C) A
+(D) 'a'
+$
+? Assume C is a char; the expression (C != ' ') will?
+C14
+S2
+(A) Will evaluate to true if equal to a space
+(B) Will evaluate to false if equal to a space<
+(C) Will fail to evaluate because C needs to be a string
+$
+? If char x = 'A', Character.isUpperCase(x) will return?
+C14
+S2
+(T) True<
+(F) False
+$
+? String word = 'Name'; will assign the string to this variable?
+C14
+S3
+(A) False, because word is not an integer
+(B) True
+(C) False, because 'Name' is not a string< 
+$
