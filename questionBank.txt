@@ -26,3 +26,77 @@ S3
 (B) True
 (C) False, because 'Name' is not a string< 
 $
+
+/* Beginning for Chapter7 Arrays-CharlesVang
+
+?An array is a group of variables (called elements or components) containing values that all have the same type? 
+C7
+S2
+(A) t<
+(B) f 
+$
+?Arrays are created with keyword? 
+C7
+S3
+(A) new<
+(B) make
+(C) name
+(D) call
+$
+?The first element in every array has index?
+C7
+S2
+(A) 0<
+(B) 1
+(C) -1
+(D) 2
+$
+?A GOOD example of declaring an array variable would be?
+C7
+S3
+(A) int[]c;<
+(B) int c;
+(C) int()c;
+(D) int[c];
+$
+?You can create an array and initialize its elements with an array initializer? 
+C7
+S4.2
+(A) t<
+(B) f
+$
+?To pass an array argument to a method, specify the name of the array without any brackets?
+C7
+S8
+(A) t<
+(B) f
+$
+?The collection class ArrayList<E> can dynamically change its size to accommodate more elements? 
+C7
+S16
+(A) t<
+(B) f
+$
+?What static method can be used to compare arrays?
+C7
+S15
+(A) sort()
+(B) equals()<
+(C) fill()
+(D) binarySearch()
+$
+?Arrays that require two indices to identify each element are called?
+C7
+S11
+(A) two-dimensional arrays<
+(B) three-dimensional arrays
+(C) one-dimensional arrays
+(D) none of the above
+$
+?Unlike some other languages, Java does not allow you to choose pass-by-value or pass-by-reference-all arguments are passed by value?
+C7
+S9
+(A) t<
+(B) f
+
+*/ End of Chapter7 Array-CharlesVang
