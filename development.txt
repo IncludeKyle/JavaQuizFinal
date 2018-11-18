@@ -1,2 +1,10 @@
-
 Itemization of team member responsibilities in the project:
+
+Chapter 7 - Arrays:
+  LagoonNebula1
+  
+Chapter 9 - Inheritance:
+  Thanh
+
+Chapter 14 - Strings:
+  IncludeKyle
