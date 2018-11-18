@@ -9,6 +9,5 @@ public abstract class ParserUtility {
     
     // Contains the instance variables and static utility methods
     // for the QuestionParser class which will extend it
-    // 
     
 }
