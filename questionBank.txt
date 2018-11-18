@@ -314,3 +314,53 @@ S9
 $
 /*End Chapter 18, Recursion */
 
+/*Chapter 15, File IO, Mackenzie Branch, Brady Olson*/
+1.
+? Which type of data is permanently stored?
+C15
+S1
+(A) Arrays
+(B) String
+(C) Int
+(D) Files<
+$
+
+2.
+?  What is “Path”?
+C15
+S3
+(A) It represents the location of the file<
+(B) It opens the file
+(C) It is used when altering the file
+(D) It creates a new file
+$
+
+3.
+?  Which class is used for file output?
+C15
+S3
+(A) Scanner
+(B) Formatter<
+(C) Files
+(D) Paths
+$
+
+4.
+? Which class is used for file input?
+C15
+S3
+(A) Scanner<
+(B) Formatter
+(C) Files
+(D) Path
+$
+
+5.
+?  A file must be closed and reopened when wanting to read data in the file multiple times?
+C18
+S3
+(A) True<
+(B) False
+$
+
+/*End chapter 15, File IO*/
