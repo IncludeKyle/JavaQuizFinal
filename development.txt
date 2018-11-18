@@ -13,34 +13,36 @@ The 10 general categories:
 Itemization of team member responsibilities in the project:
 
 Chapter 7 - Arrays:
-  @LagoonNebula1
+  LagoonNebula1
   
 Chapter 9 - Inheritance:
-  @Thanh
+  Thanh
   
 Chapter 10 - Interface Dependent Polymorphism:
-  N/A
+  Brandon
   
-Chapter ? - Software Development (JAR package):
-  N/A
+PDF on D2L - Software Development (JAR package):
+  BTOlson
 
 Chapter 14 - Regex (Strings):
-  @IncludeKyle
+  IncludeKyle
   
 Chapter 15 - I/O & Object Serialization 
-  N/A
+  Mackbra (5x)
+  BTOlson (5x)
   
-Chapter ? - Lambdas
-  N/A
+Chapter 17 - Lambdas
+  LagoonNebula1 (5x)
+  IncludeKyle   (5x)
   
 Chapter 16 - Generic Classes & Methods 
-  N/A
+  Paulegbe
   
 Chapter 18 - Recursion
-  N/A
+  Mackbra
   
-Chapter ? - Concurrency
-  N/A
-
+Chapter 23 - Concurrency
+  Paulegbe (5x)
+  Brandon  (5x)
 
 
