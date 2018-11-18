@@ -98,5 +98,73 @@ C7
 S9
 (A) t<
 (B) f
-
 */ End of Chapter7 Array-CharlesVang
+/* Begining of chapter9, Object-Oriented Programming: Inheritance, Thanh Nguyen
+? Superclass constructors are not inherited by subclasses. ? 
+C9 
+S2 
+(A) t< 
+(B) f 
+$ 
+? Methods of a subclass cannot directly access private members of their superclass. ? 
+C9 
+S3 
+(A) t< 
+(B) f 
+$ 
+? A subclass can change the state of private superclass instance variables only through: ? 
+C9 
+S3 
+(A) A subclass cannot change the state of private superclass instance variables. 
+(B) Non-Private methods provided in the super class and inherited by that subclass.< 
+$ 
+? Declaring private instance variables helps you test, debug and correctly modify system. ? 
+C9 
+S3 
+(A) t< 
+(B) f 
+$ 
+? Why does declare overridden method with annotation ‘@Override’ is a good idea ? 
+C9 
+S4 
+(A) It doesn’t have any useful function to the current program. 
+(B) To ensure at compilation time that you defined their signatures correctly. 
+(C) It is always better to find errors at compile time rather than at runtime. 
+(D) A and B.< 
+$ 
+? Why inheritance is useful in terms of software engineering ? 
+C9 
+S4 
+(A) It reduces the use of memory. 
+(B) It makes the program run faster. 
+(C) It is more convenience when a developer wants to make changes in their source code. < 
+$ 
+? Does declaring a subclass affect its superclass’s source code ? 
+C9 
+S4 
+(A) Yes. It will erase all the instance variables in its superclass. 
+(A) No. Inheritance preserves the integrity of the super class.< 
+$ 
+? What a subclass can contain from its superclass ? 
+C9 
+S4 
+(A) It doesn’t contain anything from its superclass. 
+(B) It contains all instance variables from its super class. 
+(C) It contains all instance variables and all methods from its superclass.< 
+$ 
+? How can a subclass access to its superclass’s instance variables ? 
+C9 
+S4 
+(A) Since it inherits its superclass, it can access to its superclass’s instance variables whenever it wants. 
+(B) The instance variables have to be declared with the private keyword. 
+(C) The instance variables have to be declared with protected keyword.< 
+$ 
+? All classes in java inherit directly or indirectly from class Object. So how many methods that Object class has ? 
+C9 
+S6 
+(A) 9 
+(B) 10 
+(C) 11< 
+(D) 12 
+$ 
+*/ Ending of chapter9, Object-Oriented Programming: Inheritance, Thanh Nguyen
