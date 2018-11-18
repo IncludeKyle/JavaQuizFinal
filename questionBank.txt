@@ -26,6 +26,52 @@ S3
 (B) True
 (C) False, because 'Name' is not a string< 
 $
+? If String aWord contains "hello", aWord.length() will return?
+C14
+S3
+(A) "five"
+(B) "hello"
+(C) 5<
+(D) 4
+$
+? String word = "hello"; What does word.charAt(0) return?
+C14
+S3
+(A) True
+(B) 5
+(C) "h"< 
+(D) "hello"
+$
+? The statement: name.charAt(name.length()-1) will always return what?
+C14
+S3
+(A) The last char of the string name<
+(B) An int of the length of string name
+(C) The string contents of string name
+(D) True
+$
+? String word = "yeet"; (word.charAt(0) == 'y') will evaluate to?
+C14
+S3
+(T) True<
+(F) False
+$
+? Write the declaration of a String method that takes two String parameters:
+C14
+S3
+(A) public String processInput(int number) { //... }
+(B) public void processInput(String a, String b) { //... }
+(C) public String processInput(String word1, String word2) { //... }<
+(D) public int processInput(String word1, String word2) { //... }
+$
+? String word = "Litty"; word.substring(0,3) returns?
+C14
+S3
+(A) "Litty"
+(B) 't'
+(C) 5
+(D) "Lit"<
+$
 
 /* Beginning for Chapter7 Arrays-CharlesVang
 
