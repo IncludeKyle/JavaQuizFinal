@@ -214,3 +214,98 @@ S6
 (D) 12 
 $ 
 */ Ending of chapter9, Object-Oriented Programming: Inheritance, Thanh Nguyen
+
+1.
+? Which class is extended implicitly?
+C9
+S4
+(A) Timer
+(B) Object<
+(C) AlphaChannel
+(D) Integer
+$
+
+2.
+? Which class does a subclass extend?
+C9
+S1
+(A) parentclass 
+(B) topclass
+(C) superclass<
+(D) objectclass
+$
+
+3.
+? A “has-a” relationship represents inheritance.
+C9
+S1
+(A) True
+(B) False<
+$
+
+4.
+? A circle “is-a” Shape. What is Shape an example of?
+C9
+S2
+(A) superclass<
+(B) subclass
+(C) parentclass
+(D) childclass
+$
+5.
+? Using @Override annotations is…?
+C9
+S4
+(A) Optional<
+(B) Required
+$
+
+6.
+? Inheritance is useful because…?
+C9
+S4
+(A) It preserves the integrity of the superclass
+(B) It eliminates unnecessary duplicate coding
+(C)It allows a programmer to keep part of the code private, and part of it public if necessary
+(D) All of the above<
+$
+7.
+? One of the main differences between Inheritance and Composition is…?
+C9
+S7
+(A) Composition has fewer classes
+(B) Composition is harder to debug
+(C) Composition can extend multiple classes<
+(D) Composition can only be done at compile time
+$
+
+8.
+? Which of these does Java not allow?
+C9
+S1
+(A) Single Inheritance
+(B) Multiple Inheritance<
+(C) Single “has-a” relationships
+(D) Multiple “has-a” relationships
+$
+
+9.
+? When can a private variable be accessed?
+C9
+S3
+(A) Only by the superclass<
+(B) Wherever the program references the superclass or one of its subclasses
+(C) Never
+(D) By subclasses and other classes in the same package
+$
+10.
+? Subclass constructors can call superclass constructors with which keyword?
+C9
+S4
+(A) get
+(B) set
+(C) @Override
+(D) super<
+$
+
+
