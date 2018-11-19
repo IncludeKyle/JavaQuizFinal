@@ -467,3 +467,39 @@ S 16.6
 
 /* end Chapter 16 - Generic Classes & Methods  Paul Egbe */
 
+/* start Chapter 23 - Concurrency  */
+
+?  concurrency is the ability to run several programs or several parts of a program in parallel
+C23
+S N/A
+(T)  <
+(F)  
+$
+? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
+C23
+S N/A
+(T)  <
+(F)  
+$
+? Concurrency is another name for Parallelism.
+C23
+S N/A
+(T)  
+(F)  <
+$
+? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
+C23
+S N/A
+(T)  
+(F)  <
+$
+?  modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
+C23
+S N/A
+(T)  <
+(F)  
+$
+
+/* endChapter 23 - Concurrency  Paul Egbe */
+
+
