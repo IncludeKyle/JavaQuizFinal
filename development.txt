@@ -1,12 +1,12 @@
 The 10 general categories:
 - Arrays
 - Inheritance 
-- Interface dependent Polymorphism (interface you create)
+- Interface dependent Polymorphism 
 - Software development (JAR packaging and exception handling)
 - Regex
-- I/O & object serialization (at least for some output)
+- I/O & object serialization 
 - Lambdas
-- Generic classes & methods (used throughout program; include those devised by you)
+- Generic classes & methods 
 - Recursion
 - Concurrency
 
