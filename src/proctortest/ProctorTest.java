@@ -1,26 +1,22 @@
 
 package proctortest;
 
+import java.io.IOException;
+
 /**
- * @date   11-18-18
- * @author Kyle Blaha, group members add you names!
+ * @date    11-18-18
+ * @authors (Insert group names)
  **/
+
+// --- Driver class ---
+// This was: public class Driver
 public class ProctorTest {
 
-    // --- Driver class ---
-    
     // Main method
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
-        // Instantiates a QuestionParser object which will contain an array with
-        // all of the parsed question objects. 
-        
-        // This driver class will contain all of the methods and variables needed
-        // to read the QuestionParser objects and deliver the test to user.
-        
-        // The TestAnalysis class will also be either instantiated here or used
-        // as a static utility class to report the results of the test.
-        
+        // Create a parser object
+        QuestionParser parser = new QuestionParser();
+        parser.runTest();  
     } 
-    
 }
