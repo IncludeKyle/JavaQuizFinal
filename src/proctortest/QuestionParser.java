@@ -9,31 +9,84 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * @date    11-18-18
- * @authors (Add group names)
+ * @date    11-21-18
+ * @authors (Insert group names)
  **/
 
-// This is class: public class StructureTest
+//This was originally class: public class StructureTest
 public class QuestionParser {
     
-    // == instants==
-    private ArrayList<Question> questionsBank = new ArrayList<Question>();
-    private ArrayList<Question> pickedQuest = new ArrayList<Question>();
+    // ===============================
+    // ====== Instance Variables =====
+    // ===============================
+    private ArrayList<Question> questionsBank = new ArrayList<>();
+    private ArrayList<Question> pickedQuest = new ArrayList<>();
     private Random random = new Random();
 
-
-    // == constructor ==
+    
+    // ========================
+    // ====== Constructor =====
+    // ========================
     public QuestionParser() throws IOException {
-        loadQuestionBank(); // load questionBank.txt to questionBank arrayList
-        Collections.sort(questionsBank); // sorting ascending order for questionBank list
-        randomQuizQuest(); // random pick 3 questions of each chapter, and build pickedQuest list
-
+        
+        // Reads questionBank.txt to create objects of type Question,
+        // adds the Question objects to the questionsBank array list instance
+        loadQuestionBank();
+        
+        // Sort questionBank list in ascending order
+        Collections.sort(questionsBank); 
+        
+        // Randomly pick 3 questions of each chapter, and build pickedQuest array list
+        randomQuizQuest(); 
     }
 
-    // == public methods ==
-    private void loadQuestionBank() throws IOException { // load questionBank.txt to questionBank arrayList
+    
+    // ==========================
+    // ===== Public Methods =====
+    // ==========================
+    
+    // Runs the test using the Question objects stored in the pickedQuest array list
+    public void runTest() { 
+        
+        int count = 1;
+        String userAnswer = "";
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("%5s%s%5s%n", "*****", "FINAL QUIZ", "*****");
+        
+        // Pull out each question object from the list
+        for (Question question : pickedQuest) 
+        {
+            // Display question to user
+            System.out.printf("%d%s%s%n", count, ". ", question.getHeadQuestion());
+            
+            // Display each possible answer to user
+            for (StringBuilder stringBuilder : question.getTailQuestion())
+            {
+                System.out.println(stringBuilder);
+            }
 
+            // Converts user input to upper-case
+            userAnswer = scanner.next().toUpperCase(); 
+            
+            // Display results after user answers a question in terminal 
+            System.out.println("* Your Answer: " + userAnswer);
+            System.out.println("* Correct Answer: " + question.getCorrectAnswer());
+            System.out.println("* Chapter: " + question.getChapter());
+            System.out.println("* Section: " + question.getSection() + "\n\n");
 
+            count++;
+        }
+    }
+    
+    
+    // ============================
+    // ====== Private Methods =====
+    // ============================
+    
+    // Load questionBank.txt to questionsBank arrayList
+    private void loadQuestionBank(){ 
+
+        // Try to read from the question bank text file
         try {
             File questionBank = new File("questionBank.txt");
             Scanner inputFile = new Scanner(questionBank);
@@ -42,33 +95,44 @@ public class QuestionParser {
             ArrayList<String> tailQuestion = new ArrayList<>();
             String correctAnswer = "";
 
+            // Loop through the entire file
             while (inputFile.hasNext()) {
-                String str = inputFile.nextLine();
+                
+                // Pull out each line as a string
+                String lineFromFile = inputFile.nextLine();
 
-                // if hasNext() is not $ -> build component array, prepare for building each question
-                if (str.length() > 1) {
-                    components.add(str);
+                // Uses the length to test for '$'
+                // If line from file is not $ -> add line to components array list, prepare for building each question
+                if (lineFromFile.length() > 1) {
+                    components.add(lineFromFile); // Add line to the components array list
                 }
 
-                // if hasNext() is $ -> build each component for each question
-                if (str.length() == 1) {
-                    tailQuestion = buildTailQuest(components); // build question's tail
-                    correctAnswer = buildCorrectAnswer(components); // build correct answer of the question
+                // Once the scanner has reached the 1 char length '$' symbol it knows it has reached
+                // the end of a question and answer block.
+                // The loop stops and builds a completed Question object with with data stored in 
+                // the components array list.
+                if (lineFromFile.length() == 1) {
+                    tailQuestion = buildTailQuest(components);      // Build question's tail
+                    correctAnswer = buildCorrectAnswer(components); // Build correct answer of the question
                     Question question = new Question(components.get(0), tailQuestion, correctAnswer, components.get(1), components.get(2)); // create a question object after has all of its components
-                    questionsBank.add(question); // add that question object to the questionBank array
-                    components.clear(); // clear the component array to prepare for the next building of question
+                    questionsBank.add(question); // Add that question object to the questionBank array
+                    components.clear(); // Clear the component array to prepare for the next building of question
                 }
             }
 
         } catch (IOException e) {
-            throw new IllegalArgumentException("File path does't exist.");
+            
+            // Display error stack trace
+            e.printStackTrace();
         }
     }
 
+    // Uses the received components array list and a Regex to test for all answers in a 
+    // question block
     private ArrayList<String> buildTailQuest(ArrayList<String> component) {
         ArrayList<String> tailQuestion = new ArrayList<>();
         for (String tail : component) {
-            if (tail.matches("[(].[)].*")) { // regex to define a tail of a question
+            if (tail.matches("[(].[)].*")) { // Regex to define a tail of a question
                 tailQuestion.add(tail);
             }
         }
@@ -76,10 +140,12 @@ public class QuestionParser {
         return tailQuestion;
     }
 
+    // Uses the received components array list and a Regex to test for the one correct 
+    // answer in a question block
     private String buildCorrectAnswer(ArrayList<String> component) {
         String correctAnswer = "";
         for (String string : component) {
-            if (string.matches("[(].[)].*[<]")) { // regex to define correct answer of a question
+            if (string.matches("[(].[)].*[<]")) { // Regex to define correct answer of a question
                 correctAnswer = string;
             }
         }
@@ -87,12 +153,14 @@ public class QuestionParser {
         return correctAnswer;
     }
 
+    // Adds randomly selected questions to the pickedQuest array
     private void buildPickedQuest(ArrayList<Integer> ranums, ArrayList<Question> groupQuest) {
         for (int c = 0; c < ranums.size(); c++) {
             pickedQuest.add(groupQuest.get(ranums.get(c)));
         }
     }
 
+    // Randomly pick 3 questions of each chapter, and build pickedQuest array list
     private void randomQuizQuest() {
 
         String currentChapter = "";
@@ -103,14 +171,14 @@ public class QuestionParser {
         for (int i = 0; i < questionsBank.size(); i++) {
             currentChapter = questionsBank.get(i).getChapter().toString();
 
-            // if i reaches to the end, set nextChapter to the chapter of the first question in questionsBank array
+            // If i reaches to the end, set nextChapter to the chapter of the first question in questionsBank array
             if (i == questionsBank.size() - 1) {
                 nextChapter = questionsBank.get(0).getChapter().toString();
             } else {
                 nextChapter = questionsBank.get(i + 1).getChapter().toString();
             }
 
-            // check if currentChapter equals nextChapter, add that question to the groupQuest array
+            // Check if currentChapter equals nextChapter, add that question to the groupQuest array
             if (currentChapter.equals(nextChapter)) {
                 groupQuests.add(questionsBank.get(i));
             } else {
@@ -123,19 +191,21 @@ public class QuestionParser {
         }
     }
 
+    // Generate a unique list of random numbers, no duplicates
     private ArrayList<Integer> random(int max) {
         ArrayList<Integer> ranums = new ArrayList<>();
         int min = 0;
 
         while (ranums.size() < 3) {
             int randomNum = random.nextInt((max - min) + 1) + min;
-            if (checkDuplicate(ranums, randomNum)) { // check if duplicating number, then will ignore it
+            if (checkDuplicate(ranums, randomNum)) { // Check if duplicating number, then will ignore it
                 ranums.add(randomNum);
             }
         }
         return ranums;
     }
 
+    // Checks an integer against a list for duplicate numbers, return false if a duplicate
     private boolean checkDuplicate(ArrayList<Integer> arr, int num) {
         for (int value : arr) {
             if (value == num) {
@@ -144,30 +214,4 @@ public class QuestionParser {
         }
         return true;
     }
-
-    // == public methods ==
-    public void runTest() { // run test on command line
-        String userAnswer = "";
-        Scanner scanner = new Scanner(System.in);
-        System.out.printf("%5s%s%5s%n", "*****", "FINAL QUIZ", "*****");
-
-        int count = 1;
-        for (Question question : pickedQuest) {
-            System.out.printf("%d%s%s%n", count, ". ", question.getHeadQuestion());
-            for (StringBuilder stringBuilder : question.getTailQuestion()) {
-                System.out.println(stringBuilder);
-            }
-
-            userAnswer = scanner.next().toUpperCase();
-            System.out.println("* Your Answer: " + userAnswer);
-            System.out.println("* Correct Answer: " + question.getCorrectAnswer());
-            System.out.println("* Chapter: " + question.getChapter());
-            System.out.println("* Section: " + question.getSection() + "\n\n");
-
-            count++;
-        }
-
-
-    }
-    
 }
