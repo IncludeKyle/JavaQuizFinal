@@ -12,6 +12,39 @@ The 10 general categories:
 
 Itemization of team member responsibilities in the project:
 
+==================================================================================================
+ Phase 2: Start working on pulling the master copy and work on your assigned piece of the project
+==================================================================================================
+
+Thanh - [Interface][Regex][File IO: Input] You have contributed enough to satisfy 3 goal areas and your classes 
+          are now the core of the project! That's more than enough for now, please check emails in the event any 
+          of us need help with how an area of your code works, thanks for your generous contribution!
+        
+Mackenzie - [Generics] Make a generic method to satisfy the generic method requirement, it can belong to any class 
+              in the project.
+
+Paul - [Abstract class][Inheritance] Make an abstract class with static methods that can be inherited by the 
+         TestAndAnalyze class to help with displaying a good looking text based UI.
+       
+Kyle - [Arrays][Lambda][Inheritance] I will make a class TestAndAnalyze that is instantiated as an object in the 
+         QuestionParser class whenever the runTest() method is called. I will use arrays to work with the data and 
+         work a lambda into the process.
+       
+Brandon - [Concurrency][Recursion] The FileIO needs to be multi-threaded for when we read from the questionBank.txt and the 
+            write to the resultOfTest.txt file. See if you can find a spot for a recursive method in any of the classes 
+            to satisfy the recursion requirement.
+
+Charles - [FileIO: Output][Exceptions] Work with Brady to make a class that can be instantiated in the TestAndAnalyze class to
+            report the final test results to a text file. It should have a method that can receive a string array and
+            print every line from it to a file. Handle FileIO exceptions.
+
+Brady - [FileIO: Output][Exceptions] Work with Charles to make a class that can be instantiated in the TestAndAnalyze class to
+          report the final test results to a text file. It should have a method that can receive a string array and
+          print every line from it to file. Handle FileIO exceptions.
+
+====================================
+ Phase 1: Create 100 test questions
+====================================
 Chapter 7 - Arrays:
   LagoonNebula1(done)
   
@@ -44,5 +77,3 @@ Chapter 18 - Recursion
 Chapter 23 - Concurrency
   Paulegbe (5x)(done)
   Brandon  (5x) <------------------------------------------------(not done!)
-
-
