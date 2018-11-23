@@ -1,4 +1,4 @@
-? What is a character literal representing the upper case letter A? 
+? What is a character literal representing the upper case letter A?
 C14
 S2
 (A) 65
@@ -24,7 +24,7 @@ C14
 S3
 (A) False, because word is not an integer
 (B) True
-(C) False, because 'Name' is not a string< 
+(C) False, because 'Name' is not a string<
 $
 ? If String aWord contains "hello", aWord.length() will return?
 C14
@@ -39,7 +39,7 @@ C14
 S3
 (A) True
 (B) 5
-(C) "h"< 
+(C) "h"<
 (D) "hello"
 $
 ? The statement: name.charAt(name.length()-1) will always return what?
@@ -72,16 +72,13 @@ S3
 (C) 5
 (D) "Lit"<
 $
-
-/* Beginning for Chapter7 Arrays-CharlesVang
-
-?An array is a group of variables (called elements or components) containing values that all have the same type? 
+?An array is a group of variables (called elements or components) containing values that all have the same type?
 C7
 S2
 (A) t<
-(B) f 
+(B) f
 $
-?Arrays are created with keyword? 
+?Arrays are created with keyword?
 C7
 S3
 (A) new<
@@ -105,7 +102,7 @@ S3
 (C) int()c;
 (D) int[c];
 $
-?You can create an array and initialize its elements with an array initializer? 
+?You can create an array and initialize its elements with an array initializer?
 C7
 S4.2
 (A) t<
@@ -117,7 +114,7 @@ S8
 (A) t<
 (B) f
 $
-?The collection class ArrayList<E> can dynamically change its size to accommodate more elements? 
+?The collection class ArrayList<E> can dynamically change its size to accommodate more elements?
 C7
 S16
 (A) t<
@@ -144,79 +141,74 @@ C7
 S9
 (A) t<
 (B) f
-*/ End of Chapter7 Array-CharlesVang
-/* Begining of chapter9, Object-Oriented Programming: Inheritance, Thanh Nguyen
-? Superclass constructors are not inherited by subclasses. ? 
-C9 
-S2 
-(A) t< 
-(B) f 
-$ 
-? Methods of a subclass cannot directly access private members of their superclass. ? 
-C9 
-S3 
-(A) t< 
-(B) f 
-$ 
-? A subclass can change the state of private superclass instance variables only through: ? 
-C9 
-S3 
-(A) A subclass cannot change the state of private superclass instance variables. 
-(B) Non-Private methods provided in the super class and inherited by that subclass.< 
-$ 
-? Declaring private instance variables helps you test, debug and correctly modify system. ? 
-C9 
-S3 
-(A) t< 
-(B) f 
-$ 
-? Why does declare overridden method with annotation ‘@Override’ is a good idea ? 
-C9 
-S4 
-(A) It doesn’t have any useful function to the current program. 
-(B) To ensure at compilation time that you defined their signatures correctly. 
-(C) It is always better to find errors at compile time rather than at runtime. 
-(D) A and B.< 
-$ 
-? Why inheritance is useful in terms of software engineering ? 
-C9 
-S4 
-(A) It reduces the use of memory. 
-(B) It makes the program run faster. 
-(C) It is more convenience when a developer wants to make changes in their source code. < 
-$ 
-? Does declaring a subclass affect its superclass’s source code ? 
-C9 
-S4 
-(A) Yes. It will erase all the instance variables in its superclass. 
-(A) No. Inheritance preserves the integrity of the super class.< 
-$ 
-? What a subclass can contain from its superclass ? 
-C9 
-S4 
-(A) It doesn’t contain anything from its superclass. 
-(B) It contains all instance variables from its super class. 
-(C) It contains all instance variables and all methods from its superclass.< 
-$ 
-? How can a subclass access to its superclass’s instance variables ? 
-C9 
-S4 
-(A) Since it inherits its superclass, it can access to its superclass’s instance variables whenever it wants. 
-(B) The instance variables have to be declared with the private keyword. 
-(C) The instance variables have to be declared with protected keyword.< 
-$ 
-? All classes in java inherit directly or indirectly from class Object. So how many methods that Object class has ? 
-C9 
-S6 
-(A) 9 
-(B) 10 
-(C) 11< 
-(D) 12 
-$ 
-/* Ending of chapter9, Object-Oriented Programming: Inheritance, Thanh Nguyen */
-
-/*Chapter 18,  Recursion, Mackenzie Branch */
-1.
+$
+? Superclass constructors are not inherited by subclasses. ?
+C9
+S2
+(A) t<
+(B) f
+$
+? Methods of a subclass cannot directly access private members of their superclass. ?
+C9
+S3
+(A) t<
+(B) f
+$
+? A subclass can change the state of private superclass instance variables only through: ?
+C9
+S3
+(A) A subclass cannot change the state of private superclass instance variables.
+(B) Non-Private methods provided in the super class and inherited by that subclass.<
+$
+? Declaring private instance variables helps you test, debug and correctly modify system. ?
+C9
+S3
+(A) t<
+(B) f
+$
+? Why does declare overridden method with annotation ‘@Override’ is a good idea ?
+C9
+S4
+(A) It doesn’t have any useful function to the current program.
+(B) To ensure at compilation time that you defined their signatures correctly.
+(C) It is always better to find errors at compile time rather than at runtime.
+(D) A and B.<
+$
+? Why inheritance is useful in terms of software engineering ?
+C9
+S4
+(A) It reduces the use of memory.
+(B) It makes the program run faster.
+(C) It is more convenience when a developer wants to make changes in their source code. <
+$
+? Does declaring a subclass affect its superclass’s source code ?
+C9
+S4
+(A) Yes. It will erase all the instance variables in its superclass.
+(A) No. Inheritance preserves the integrity of the super class.<
+$
+? What a subclass can contain from its superclass ?
+C9
+S4
+(A) It doesn’t contain anything from its superclass.
+(B) It contains all instance variables from its super class.
+(C) It contains all instance variables and all methods from its superclass.<
+$
+? How can a subclass access to its superclass’s instance variables ?
+C9
+S4
+(A) Since it inherits its superclass, it can access to its superclass’s instance variables whenever it wants.
+(B) The instance variables have to be declared with the private keyword.
+(C) The instance variables have to be declared with protected keyword.<
+$
+? All classes in java inherit directly or indirectly from class Object. So how many methods that Object class has ?
+C9
+S6
+(A) 9
+(B) 10
+(C) 11<
+(D) 12
+$
 ? What is recursion?
 C18
 S1
@@ -225,8 +217,6 @@ S1
 (C) A method that calls on itself either directly or indirectly<
 (D) An incomplete class that doesn’t create any objects
 $
-
-2.
 ?  What is indirect recursion?
 C18
 S2
@@ -234,18 +224,14 @@ S2
 (B) When a method calls another method which then calls on the original method<
 (C) When a method calls an abstract class
 $
-
-3.
-?  What would happen if the base case were omitted from the recursion?
+? What would happen if the base case were omitted from the recursion ?
 C18
-S
+S4
 (A) Compiler Error
 (B) Infinite Loop
 (C) Infinite Recursion<
 (D) Nothing
 $
-
-4.
 ? What do iteration and recursion NOT have in common?
 C18
 S7
@@ -254,16 +240,12 @@ S7
 (C) They both use a selection statement<
 (D) They both involve iteration
 $
-
-5.
 ?  Any problem that can be solved recursively can be solved iteratively and vice versa?
 C18
 S7
 (A) True<
 (B) False
 $
-
-6.
 ?  What is recursive back tracking?
 C18
 S10
@@ -272,8 +254,6 @@ S10
 (C) A compiler error
 (D) A method of debugging
 $
-
-7.
 ?  What is a drawback to recursion?
 C18
 S5
@@ -282,8 +262,6 @@ S5
 (C) The more times it calls itself, the longer it takes to compute<
 (D) The solution is not always apparent
 $
-
-8.
 ?  Why are fractals used when teaching recursion?
 C18
 S9
@@ -292,8 +270,6 @@ S9
 (C) They create a form by repeating a pattern<
 (D) They are a good introduction to GUIs
 $
-
-9.
 ?  A ____ is needed to terminate recursion?
 C18
 S1
@@ -302,20 +278,14 @@ S1
 (C) break statement
 (D) base case<
 $
-
-10.
 ?  Each time a fractal’s pattern is applied, the fractal is said to be at a new _____?
 C18
 S9
 (A) width
 (B) height
 (C) level<
-(D) volume 
+(D) volume
 $
-/*End Chapter 18, Recursion */
-
-/*Chapter 15, File IO, Mackenzie Branch, Brady Olson*/
-1.
 ? Which type of data is permanently stored?
 C15
 S1
@@ -324,8 +294,6 @@ S1
 (C) Int
 (D) Files<
 $
-
-2.
 ?  What is “Path”?
 C15
 S3
@@ -334,8 +302,6 @@ S3
 (C) It is used when altering the file
 (D) It creates a new file
 $
-
-3.
 ?  Which class is used for file output?
 C15
 S3
@@ -344,8 +310,6 @@ S3
 (C) Files
 (D) Paths
 $
-
-4.
 ? Which class is used for file input?
 C15
 S3
@@ -354,19 +318,12 @@ S3
 (C) Files
 (D) Path
 $
-
-5.
 ?  A file must be closed and reopened when wanting to read data in the file multiple times?
 C18
 S3
 (A) True<
 (B) False
 $
-
-/*End chapter 15, File IO*/
-
-/* start Chapter 16 - Generic Classes & Methods  */
-
 ? Write a single statement that declares a reference variable of type Integer named myInt, creates an object of type Integer with the initial value of 75, and assigns it to the reference variable.
 C16
 S16.3
@@ -379,8 +336,8 @@ C16
 S16.3
 (A) myString2 = new String(x);
 (B) Double myDouble2 = new Double(x);
-myDouble = myDouble2; <
-(C) myFloat2 = new Float(x);
+(C) myDouble = myDouble2; <
+(D) myFloat2 = new Float(x);
 $
 ? Suppose a reference variable of type Integer called myInt is already declared. Create an object of type Integer with the initial value of 1 and assign it to the reference variable myInt.
 C16
@@ -403,53 +360,6 @@ S16.3
 (B) myLong = new Float();
 (C) none of the above
 $
-? Write the definition of a class Clock. The class has no constructors and three instance variables. One is of type int called hours, initialized to 12, another is of type boolean called isTicking, initialized to true, and the last one is of type Integer called diff, initialized to 5.
-C16
-S16.3
-(A)  public static void Time(){}
-(B) public class Clock
-{
-private int hours =12;
-private boolean isTicking=true;
-private Integer diff = 5;
-} <
-(C) none of the above.
-$
-? Write a method f that accepts an ArrayList containing String objects. The method should return a String containing the first character of each string in the ArrayList, in the order in which they appear. Thus, if the ArrayList contains the Strings: Hello world goodbye the return value of the method would be the String Hwg 
-C16
-S16.6
-(A) public static String f(ArrayList < String > words) {
- 
-    String s = "";
- 
-    for (int i = 0; i < words.size(); i++) {
- 
-        s += words.get(i).charAt(0);
- 
-    }
-    return s;
- 
-} <
-(B) public class Clock
-{
-private int hours =12;
-private boolean isTicking=true;
-private Integer diff = 5;
-} 
-(C) none of the above.
-$
-? Declare an ArrayList named taxRates of   five  elements of type Double and initialize the elements (starting with the first) to the values 0.10, 0.15, 0.21, 0.28, 0.31, respectively.
-C16
-S16.6
-(A) abstract class taxRates{}
-(B)  ArrayList taxRates = new ArrayList();
-        taxRates.add(0.10);
-        taxRates.add(0.15);
-        taxRates.add(0.21);
-        taxRates.add(0.28);
-        taxRates.add(0.31); <
-(C) Integer myInt = new Integer(seventyFive);
-$
 ? Suppose a reference variable of type Double called myDouble has already been declared . There is also a double variable x that has been declared and initialized . Create an object of type Double with the initial value of x and assign it to the reference variable myDouble.
 C16
 S16.3
@@ -463,43 +373,34 @@ S 16.6
 (A) a.get();
 (B) a.get(0); <
 (C) a.get(first);
-
-
-/* end Chapter 16 - Generic Classes & Methods  Paul Egbe */
-
-/* start Chapter 23 - Concurrency  */
-
-?  concurrency is the ability to run several programs or several parts of a program in parallel
+$
+? Concurrency is the ability to run several programs or several parts of a program in parallel
 C23
-S N/A
+S0
 (T)  <
 (F)  
 $
 ? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
 C23
-S N/A
+S0
 (T)  <
 (F)  
 $
 ? Concurrency is another name for Parallelism.
 C23
-S N/A
+S0
 (T)  
 (F)  <
 $
 ? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
 C23
-S N/A
+S0
 (T)  
 (F)  <
 $
-?  modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
+? Modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
 C23
-S N/A
+S0
 (T)  <
 (F)  
 $
-
-/* endChapter 23 - Concurrency  Paul Egbe */
-
-
