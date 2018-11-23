@@ -324,3 +324,83 @@ S3
 (A) True<
 (B) False
 $
+? Write a single statement that declares a reference variable of type Integer named myInt, creates an object of type Integer with the initial value of 75, and assigns it to the reference variable.
+C16
+S16.3
+(A) Integer myInt = new Integer(75); <
+(B) Integer myInt;
+(C) Integer myInt = new Integer(seventyFive);
+$
+? Suppose a reference variable of type Double called myDouble has already been declared. There is also a double variable x that has been declared and initialized. Create an object of type Double with the initial value of x and assign it to the reference variable myDouble.
+C16
+S16.3
+(A) myString2 = new String(x);
+(B) Double myDouble2 = new Double(x);
+(C) myDouble = myDouble2; <
+(D) myFloat2 = new Float(x);
+$
+? Suppose a reference variable of type Integer called myInt is already declared. Create an object of type Integer with the initial value of 1 and assign it to the reference variable myInt.
+C16
+S16.3
+(A) myInt = new Integer(1); <
+(B) myInt = new Int();
+(C) none of the above
+$
+? Suppose a reference variable of type Long called myLong is already declared. Create an object of type Long with the initial value of two billion and assign it to the reference variable myLong.
+C16
+S16.3
+(A) myLong = myLong();
+(B) myLong = new Float();
+(C) myLong = new Long(2000000000L); <
+$
+? Suppose a reference variable of type Double called myDouble is already declared. Create an object of type Double with the initial value of 1.5 and assign it to the reference variable myDouble.
+C16
+S16.3
+(A) myDouble = new Double(1.5);<
+(B) myLong = new Float();
+(C) none of the above
+$
+? Suppose a reference variable of type Double called myDouble has already been declared . There is also a double variable x that has been declared and initialized . Create an object of type Double with the initial value of x and assign it to the reference variable myDouble.
+C16
+S16.3
+(A) myDouble = new Double(x);<
+(B) myString = new String(x);
+(C) none of the above
+$
+? Given an ArrayList a, write an expression that refers to the first element of the ArrayList.
+C16
+S 16.6
+(A) a.get();
+(B) a.get(0); <
+(C) a.get(first);
+$
+? Concurrency is the ability to run several programs or several parts of a program in parallel
+C23
+S0
+(T)  <
+(F)  
+$
+? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
+C23
+S0
+(T)  <
+(F)  
+$
+? Concurrency is another name for Parallelism.
+C23
+S0
+(T)  
+(F)  <
+$
+? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
+C23
+S0
+(T)  
+(F)  <
+$
+? Modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
+C23
+S0
+(T)  <
+(F)  
+$

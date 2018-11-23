@@ -1,0 +1,48 @@
+The 10 general categories:
+- Arrays
+- Inheritance 
+- Interface dependent Polymorphism 
+- Software development (JAR packaging and exception handling)
+- Regex
+- I/O & object serialization 
+- Lambdas
+- Generic classes & methods 
+- Recursion
+- Concurrency
+
+Itemization of team member responsibilities in the project:
+
+Chapter 7 - Arrays:
+  LagoonNebula1
+  
+Chapter 9 - Inheritance:
+  Thanh
+  
+Chapter 10 - Interface Dependent Polymorphism:
+  Brandon
+  
+PDF on D2L - Software Development (JAR package):
+  BTOlson
+
+Chapter 14 - Regex (Strings):
+  IncludeKyle
+  
+Chapter 15 - I/O & Object Serialization 
+  Mackbra (5x)
+  BTOlson (5x)
+  
+Chapter 17 - Lambdas
+  LagoonNebula1 (5x)
+  IncludeKyle   (5x)
+  
+Chapter 16 - Generic Classes & Methods 
+  Paulegbe
+  
+Chapter 18 - Recursion
+  Mackbra
+  
+Chapter 23 - Concurrency
+  Paulegbe (5x)
+  Brandon  (5x)
+
+
