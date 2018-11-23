@@ -1,0 +1,326 @@
+? What is a character literal representing the upper case letter A?
+C14
+S2
+(A) 65
+(B) 'A'<
+(C) A
+(D) 'a'
+$
+? Assume C is a char; the expression (C != ' ') will?
+C14
+S2
+(A) Will evaluate to true if equal to a space
+(B) Will evaluate to false if equal to a space<
+(C) Will fail to evaluate because C needs to be a string
+$
+? If char x = 'A', Character.isUpperCase(x) will return?
+C14
+S2
+(T) True<
+(F) False
+$
+? String word = 'Name'; will assign the string to this variable?
+C14
+S3
+(A) False, because word is not an integer
+(B) True
+(C) False, because 'Name' is not a string<
+$
+? If String aWord contains "hello", aWord.length() will return?
+C14
+S3
+(A) "five"
+(B) "hello"
+(C) 5<
+(D) 4
+$
+? String word = "hello"; What does word.charAt(0) return?
+C14
+S3
+(A) True
+(B) 5
+(C) "h"<
+(D) "hello"
+$
+? The statement: name.charAt(name.length()-1) will always return what?
+C14
+S3
+(A) The last char of the string name<
+(B) An int of the length of string name
+(C) The string contents of string name
+(D) True
+$
+? String word = "yeet"; (word.charAt(0) == 'y') will evaluate to?
+C14
+S3
+(T) True<
+(F) False
+$
+? Write the declaration of a String method that takes two String parameters:
+C14
+S3
+(A) public String processInput(int number) { //... }
+(B) public void processInput(String a, String b) { //... }
+(C) public String processInput(String word1, String word2) { //... }<
+(D) public int processInput(String word1, String word2) { //... }
+$
+? String word = "Litty"; word.substring(0,3) returns?
+C14
+S3
+(A) "Litty"
+(B) 't'
+(C) 5
+(D) "Lit"<
+$
+?An array is a group of variables (called elements or components) containing values that all have the same type?
+C7
+S2
+(A) t<
+(B) f
+$
+?Arrays are created with keyword?
+C7
+S3
+(A) new<
+(B) make
+(C) name
+(D) call
+$
+?The first element in every array has index?
+C7
+S2
+(A) 0<
+(B) 1
+(C) -1
+(D) 2
+$
+?A GOOD example of declaring an array variable would be?
+C7
+S3
+(A) int[]c;<
+(B) int c;
+(C) int()c;
+(D) int[c];
+$
+?You can create an array and initialize its elements with an array initializer?
+C7
+S4.2
+(A) t<
+(B) f
+$
+?To pass an array argument to a method, specify the name of the array without any brackets?
+C7
+S8
+(A) t<
+(B) f
+$
+?The collection class ArrayList<E> can dynamically change its size to accommodate more elements?
+C7
+S16
+(A) t<
+(B) f
+$
+?What static method can be used to compare arrays?
+C7
+S15
+(A) sort()
+(B) equals()<
+(C) fill()
+(D) binarySearch()
+$
+?Arrays that require two indices to identify each element are called?
+C7
+S11
+(A) two-dimensional arrays<
+(B) three-dimensional arrays
+(C) one-dimensional arrays
+(D) none of the above
+$
+?Unlike some other languages, Java does not allow you to choose pass-by-value or pass-by-reference-all arguments are passed by value?
+C7
+S9
+(A) t<
+(B) f
+$
+? Superclass constructors are not inherited by subclasses. ?
+C9
+S2
+(A) t<
+(B) f
+$
+? Methods of a subclass cannot directly access private members of their superclass. ?
+C9
+S3
+(A) t<
+(B) f
+$
+? A subclass can change the state of private superclass instance variables only through: ?
+C9
+S3
+(A) A subclass cannot change the state of private superclass instance variables.
+(B) Non-Private methods provided in the super class and inherited by that subclass.<
+$
+? Declaring private instance variables helps you test, debug and correctly modify system. ?
+C9
+S3
+(A) t<
+(B) f
+$
+? Why does declare overridden method with annotation ‘@Override’ is a good idea ?
+C9
+S4
+(A) It doesn’t have any useful function to the current program.
+(B) To ensure at compilation time that you defined their signatures correctly.
+(C) It is always better to find errors at compile time rather than at runtime.
+(D) A and B.<
+$
+? Why inheritance is useful in terms of software engineering ?
+C9
+S4
+(A) It reduces the use of memory.
+(B) It makes the program run faster.
+(C) It is more convenience when a developer wants to make changes in their source code. <
+$
+? Does declaring a subclass affect its superclass’s source code ?
+C9
+S4
+(A) Yes. It will erase all the instance variables in its superclass.
+(A) No. Inheritance preserves the integrity of the super class.<
+$
+? What a subclass can contain from its superclass ?
+C9
+S4
+(A) It doesn’t contain anything from its superclass.
+(B) It contains all instance variables from its super class.
+(C) It contains all instance variables and all methods from its superclass.<
+$
+? How can a subclass access to its superclass’s instance variables ?
+C9
+S4
+(A) Since it inherits its superclass, it can access to its superclass’s instance variables whenever it wants.
+(B) The instance variables have to be declared with the private keyword.
+(C) The instance variables have to be declared with protected keyword.<
+$
+? All classes in java inherit directly or indirectly from class Object. So how many methods that Object class has ?
+C9
+S6
+(A) 9
+(B) 10
+(C) 11<
+(D) 12
+$
+? What is recursion?
+C18
+S1
+(A) A subclass calling a superclass
+(B) Data structures consisting of related data items of the same type
+(C) A method that calls on itself either directly or indirectly<
+(D) An incomplete class that doesn’t create any objects
+$
+?  What is indirect recursion?
+C18
+S2
+(A) When a method calls upon itself
+(B) When a method calls another method which then calls on the original method<
+(C) When a method calls an abstract class
+$
+? What would happen if the base case were omitted from the recursion ?
+C18
+S4
+(A) Compiler Error
+(B) Infinite Loop
+(C) Infinite Recursion<
+(D) Nothing
+$
+? What do iteration and recursion NOT have in common?
+C18
+S7
+(A) They each need a termination test
+(B) They both gradually approach termination
+(C) They both use a selection statement<
+(D) They both involve iteration
+$
+?  Any problem that can be solved recursively can be solved iteratively and vice versa?
+C18
+S7
+(A) True<
+(B) False
+$
+?  What is recursive back tracking?
+C18
+S10
+(A) Using recursion to return to an earlier decision point<
+(B) A syntax error
+(C) A compiler error
+(D) A method of debugging
+$
+?  What is a drawback to recursion?
+C18
+S5
+(A) It can only solve simple problems
+(B) It is difficult to debug
+(C) The more times it calls itself, the longer it takes to compute<
+(D) The solution is not always apparent
+$
+?  Why are fractals used when teaching recursion?
+C18
+S9
+(A) They require a lot of math equations
+(B) They are easy to debug
+(C) They create a form by repeating a pattern<
+(D) They are a good introduction to GUIs
+$
+?  A ____ is needed to terminate recursion?
+C18
+S1
+(A) recursion step
+(B) void return type
+(C) break statement
+(D) base case<
+$
+?  Each time a fractal’s pattern is applied, the fractal is said to be at a new _____?
+C18
+S9
+(A) width
+(B) height
+(C) level<
+(D) volume
+$
+? Which type of data is permanently stored?
+C15
+S1
+(A) Arrays
+(B) String
+(C) Int
+(D) Files<
+$
+?  What is “Path”?
+C15
+S3
+(A) It represents the location of the file<
+(B) It opens the file
+(C) It is used when altering the file
+(D) It creates a new file
+$
+?  Which class is used for file output?
+C15
+S3
+(A) Scanner
+(B) Formatter<
+(C) Files
+(D) Paths
+$
+? Which class is used for file input?
+C15
+S3
+(A) Scanner<
+(B) Formatter
+(C) Files
+(D) Path
+$
+?  A file must be closed and reopened when wanting to read data in the file multiple times?
+C18
+S3
+(A) True<
+(B) False
+$
