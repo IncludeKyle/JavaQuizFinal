@@ -58,7 +58,7 @@ PDF on D2L - Software Development (JAR package):
   BTOlson <------------------------------------------------(not done!)
 
 Chapter 14 - Regex (Strings):
-  IncludeKyle (Done)
+  IncludeKyle (done)
   
 Chapter 15 - I/O & Object Serialization 
   Mackbra (5x)(done)
@@ -66,7 +66,7 @@ Chapter 15 - I/O & Object Serialization
   
 Chapter 17 - Lambdas
   LagoonNebula1 (5x) <------------------------------------------------(not done!)
-  IncludeKyle   (5x) <------------------------------------------------(not done!)
+  IncludeKyle   (done)
   
 Chapter 16 - Generic Classes & Methods 
   Paulegbe (done)
