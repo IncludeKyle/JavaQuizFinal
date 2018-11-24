@@ -17,6 +17,7 @@ public class TestAndAnalyze {
     
     private int totalQuestions = 0; // Keeps track of how many questions were asked during test
     private int totalCorrect = 0;
+    private double percentScore = 100;
     
     
     // ========================
@@ -49,12 +50,12 @@ public class TestAndAnalyze {
         
         // Pull out each question object from the list
         for (Question question : questionList) 
-        {
+        {            
             // This string contains the question #, chapter, and section to display
             // to the user
             String questionStats = 
                         "[Question #" + count + " in " + question.getChapter() +
-                        " - " + question.getSection() + "]";
+                        " - " + question.getSection() + " Score: " + percentScore + "%]";
             
             
             line(questionStats.length(), '='); // --line--
@@ -79,6 +80,10 @@ public class TestAndAnalyze {
             // Test user answer against the correct answer, record the results based on
             // chapter and section
             analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
+            
+            // Update the score
+            percentScore = 100*( (double)totalCorrect / (double)totalQuestions );
+            percentScore = Math.floor(percentScore * 100) / 100;
             
             // Display results after user answers a question in terminal 
             System.out.println("Answer is " + question.getCorrectAnswer());
