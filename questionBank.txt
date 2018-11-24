@@ -381,7 +381,7 @@ S0
 (B) Changing the value of a final type variable
 (C) Functional programming; to pass methods as data with a functional interface <
 $
-? A lambda expression should have an argument list, arrow token, and a body: (int x, int y) -> x+y?
+? A lambda expression should have an argument list, arrow token, and a body: (int x, int y) -> x+y
 C17
 S0
 (T) True <
