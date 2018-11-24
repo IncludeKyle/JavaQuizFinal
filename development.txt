@@ -23,16 +23,16 @@ Thanh - [Interface][Regex][File IO: Input] You have contributed enough to satisf
 Mackenzie - [Generics] Make a generic method to satisfy the generic method requirement, it can belong to any class 
               in the project.
 
-Paul - [Abstract class][Inheritance] Make an abstract class with static methods that can be inherited by the 
-         TestAndAnalyze class to help with displaying a good looking text based UI.
+Paul - [Abstract class][Inheritance][Recursion] Make an abstract class with static methods that can be extended by the 
+         TestAndAnalyze class to help with displaying a good looking text based UI. Make a printLine method that works
+         recursively to print a custom length line of any character.
        
 Kyle - [Arrays][Lambda][Inheritance] I will make a class TestAndAnalyze that is instantiated as an object in the 
          QuestionParser class whenever the runTest() method is called. I will use arrays to work with the data and 
          work a lambda into the process.
        
-Brandon - [Concurrency][Recursion] The FileIO needs to be multi-threaded for when we read from the questionBank.txt and the 
-            write to the resultOfTest.txt file. See if you can find a spot for a recursive method in any of the classes 
-            to satisfy the recursion requirement.
+Brandon - [Concurrency] The FileIO needs to be multi-threaded for when we read from the questionBank.txt and the 
+            write to the resultOfTest.txt file. 
 
 Charles - [FileIO: Output][Exceptions] Work with Brady to make a class that can be instantiated in the TestAndAnalyze class to
             report the final test results to a text file. It should have a method that can receive a string array and
@@ -58,7 +58,7 @@ PDF on D2L - Software Development (JAR package):
   BTOlson <------------------------------------------------(not done!)
 
 Chapter 14 - Regex (Strings):
-  IncludeKyle (Done)
+  IncludeKyle (done)
   
 Chapter 15 - I/O & Object Serialization 
   Mackbra (5x)(done)
@@ -66,7 +66,7 @@ Chapter 15 - I/O & Object Serialization
   
 Chapter 17 - Lambdas
   LagoonNebula1 (5x) <------------------------------------------------(not done!)
-  IncludeKyle   (5x) <------------------------------------------------(not done!)
+  IncludeKyle   (done)
   
 Chapter 16 - Generic Classes & Methods 
   Paulegbe (done)
