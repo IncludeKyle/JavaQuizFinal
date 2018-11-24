@@ -21,9 +21,9 @@ public class Question implements Comparable {
     private int sort;
 
     
-    // ========================
-    // ====== Constructor =====
-    // ========================
+    // =======================
+    // ===== Constructor =====
+    // =======================
     public Question(
             String headQuestion, ArrayList<String> tailQuestionInput, 
             String correctAnswer, String chapter, String section) {
