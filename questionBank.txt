@@ -185,7 +185,7 @@ $
 C9
 S4
 (A) Yes. It will erase all the instance variables in its superclass.
-(A) No. Inheritance preserves the integrity of the super class.<
+(B) No. Inheritance preserves the integrity of the super class.<
 $
 ? What a subclass can contain from its superclass ?
 C9
