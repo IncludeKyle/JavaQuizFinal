@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  * @date    11-21-18
- * @authors (Insert group names)
+ * @authors (Paul Egbe, Insert group names)
  **/
 
 //This was originally class: public class StructureTest
@@ -27,7 +27,7 @@ public class QuestionParser {
     // ========================
     // ====== Constructor =====
     // ========================
-    public QuestionParser() throws IOException {
+    public QuestionParser() {
         
         // Reads questionBank.txt to create objects of type Question,
         // adds the Question objects to the questionsBank array list instance
@@ -49,7 +49,7 @@ public class QuestionParser {
     public void runTest() { 
         
         int count = 1;
-        String userAnswer = "";
+        String userAnswer;
         Scanner scanner = new Scanner(System.in);
         System.out.printf("%5s%s%5s%n", "*****", "FINAL QUIZ", "*****");
         
@@ -92,8 +92,8 @@ public class QuestionParser {
             Scanner inputFile = new Scanner(questionBank);
 
             ArrayList<String> components = new ArrayList<>();
-            ArrayList<String> tailQuestion = new ArrayList<>();
-            String correctAnswer = "";
+            ArrayList<String> tailQuestion;
+            String correctAnswer;
 
             // Loop through the entire file
             while (inputFile.hasNext()) {
@@ -163,10 +163,10 @@ public class QuestionParser {
     // Randomly pick 3 questions of each chapter, and build pickedQuest array list
     private void randomQuizQuest() {
 
-        String currentChapter = "";
-        String nextChapter = "";
+        String currentChapter ;
+        String nextChapter;
         ArrayList<Question> groupQuests = new ArrayList<>();
-        ArrayList<Integer> ranums = new ArrayList<>();
+        ArrayList<Integer> ranums ;
 
         for (int i = 0; i < questionsBank.size(); i++) {
             currentChapter = questionsBank.get(i).getChapter().toString();
