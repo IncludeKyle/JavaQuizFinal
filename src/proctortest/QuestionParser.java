@@ -13,6 +13,12 @@ import java.util.Scanner;
  * @authors (Paul Egbe, Kyle Blaha, Insert group names)
  **/
 
+interface QuestionParserMethods{
+
+     boolean checkDuplicateMethod(ArrayList<Integer> arr, int num );
+}
+
+
 //This was originally class: public class StructureTest
 public class QuestionParser {
     
@@ -58,7 +64,7 @@ public class QuestionParser {
     // ============================
     
     // Load questionBank.txt to questionsBank arrayList
-    private void loadQuestionBank(){ 
+    private void loadQuestionBank(){
 
         // Try to read from the question bank text file
         try {
@@ -172,7 +178,7 @@ public class QuestionParser {
 
         while (ranums.size() < 3) {
             int randomNum = random.nextInt((max - min) + 1) + min;
-            if (checkDuplicate(ranums, randomNum)) { // Check if duplicating number, then will ignore it
+            if (checkDuplicate.checkDuplicateMethod(ranums, randomNum)) { // Check if duplicating number, then will ignore it
                 ranums.add(randomNum);
             }
         }
@@ -180,12 +186,11 @@ public class QuestionParser {
     }
 
     // Checks an integer against a list for duplicate numbers, return false if a duplicate
-    private boolean checkDuplicate(ArrayList<Integer> arr, int num) {
-        for (int value : arr) {
+    QuestionParserMethods checkDuplicate =  (ArrayList<Integer> arr, int num)  -> { for (int value : arr) {
             if (value == num) {
                 return false;
             }
-        }
-        return true;
-    }
+        }return true; };
+
+
 }
