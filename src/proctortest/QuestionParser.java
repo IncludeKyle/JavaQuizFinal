@@ -13,8 +13,8 @@ import java.util.Scanner;
  * @authors (Paul Egbe, Kyle Blaha, Insert group names)
  **/
 
+// Functional interface added for a lambda
 interface QuestionParserMethods{
-
      boolean checkDuplicateMethod(ArrayList<Integer> arr, int num );
 }
 
@@ -28,6 +28,14 @@ public class QuestionParser {
     private ArrayList<Question> questionsBank = new ArrayList<>();
     private ArrayList<Question> pickedQuest = new ArrayList<>();
     private Random random = new Random();
+    
+    // Uses a lambda to pull every value from the list and check for duplicates
+    // Checks an integer against a list for duplicate numbers, return false if a duplicate
+    QuestionParserMethods checkDuplicate =  (ArrayList<Integer> arr, int num)  -> { for (int value : arr) {
+            if (value == num) {
+                return false;
+            }
+        }return true; };
 
     
     // ========================
@@ -178,19 +186,13 @@ public class QuestionParser {
 
         while (ranums.size() < 3) {
             int randomNum = random.nextInt((max - min) + 1) + min;
+            
+            // Use the lambda to test the randomNum against the list of random numbers
             if (checkDuplicate.checkDuplicateMethod(ranums, randomNum)) { // Check if duplicating number, then will ignore it
                 ranums.add(randomNum);
             }
         }
         return ranums;
     }
-
-    // Checks an integer against a list for duplicate numbers, return false if a duplicate
-    QuestionParserMethods checkDuplicate =  (ArrayList<Integer> arr, int num)  -> { for (int value : arr) {
-            if (value == num) {
-                return false;
-            }
-        }return true; };
-
 
 }
