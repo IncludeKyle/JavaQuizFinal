@@ -23,13 +23,16 @@ Thanh - [Interface][Regex][File IO: Input] You have contributed enough to satisf
 Mackenzie - [Generics] Make a generic method to satisfy the generic method requirement, it can belong to any class 
               in the project.
 
-Paul - [Abstract class][Inheritance][Recursion] Make an abstract class with static methods that can be extended by the 
-         TestAndAnalyze class to help with displaying a good looking text based UI. Make a printLine method that works
-         recursively to print a custom length line of any character.
+Paul - [Abstract class][Lambda][Interface] 
+         > Make an abstract class with static methods that can be extended by the TestAndAnalyze class to help with 
+         displaying a good looking text based UI and processing test score data. 
+         Add a lambda to the QuestionParser class.(Done)
        
-Kyle - [Arrays][Lambda][Inheritance] I will make a class TestAndAnalyze that is instantiated as an object in the 
-         QuestionParser class whenever the runTest() method is called. I will use arrays to work with the data and 
-         work a lambda into the process.
+Kyle - [Inheritance][Arrays][Recursion]
+         > Make a class TestAndAnalyze that is instantiated as an object in the QuestionParser class whenever 
+         the runTest() method is called.(Done)
+         > Use arrays to work with the chapter and section test score data. 
+         > Make a printLine method that works recursively to print a custom length line of any character.
        
 Brandon - [Concurrency] The FileIO needs to be multi-threaded for when we read from the questionBank.txt and the 
             write to the resultOfTest.txt file. 
