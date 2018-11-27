@@ -31,6 +31,9 @@ public class TestAndAnalyze {
         
         // Start the test
         runTest();
+        
+        // Analyze the test result instance variables
+        analyzeFinalResult();
     }
     
     
@@ -67,7 +70,7 @@ public class TestAndAnalyze {
             System.out.println(question.getHeadQuestion());
             line(50, '='); // --line--
             
-            // Display each possible answer to user
+            // Display each possible answer 
             for (StringBuilder stringBuilder : question.getTailQuestion())
             {
                 System.out.println(stringBuilder);
@@ -116,6 +119,18 @@ public class TestAndAnalyze {
         // Increment +1 every time this method is called to keep track of how many
         // questions were asked
         totalQuestions++; 
+    }
+    
+    
+    // Finds the resulting score value for each chapter and section 
+    private void analyzeFinalResult()
+    {
+        double score = (double)totalCorrect / (double)totalQuestions;
+        score *= 100; // Make it a percent %
+        
+        line(50, '+'); // --line--
+        System.out.println("Final score: " + score + "%");
+        line(50, '+'); // --line--
     }
     
     // Recursive method to satisfy the recursion requirement in the project
