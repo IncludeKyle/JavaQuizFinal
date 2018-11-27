@@ -19,7 +19,7 @@ interface QuestionParserMethods{
 }
 
 
-//This was originally class: public class StructureTest
+// This was originally class: public class StructureTest
 public class QuestionParser {
     
     // ===============================
