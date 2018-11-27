@@ -55,7 +55,8 @@ public class TestAndAnalyze {
             // to the user
             String questionStats = 
                         "[Question #" + count + " in " + question.getChapter() +
-                        " - " + question.getSection() + " Score: " + percentScore + "%]";
+                        " - " + question.getSection() + " | Score: (" + totalCorrect + "/" + 
+                        totalQuestions + ")=" + percentScore + "%]";
             
             
             line(questionStats.length(), '='); // --line--
@@ -117,18 +118,20 @@ public class TestAndAnalyze {
         totalQuestions++; 
     }
     
+    // Recursive method to satisfy the recursion requirement in the project
     // Create a custom output line of chars
     private void line(int length, char lineCharacter)
     {
-        // Loop to create custom line
-        while (length > 0)
+        if (length <= 0) // Base case
+        {
+            // Drop to a new line after printing out a line
+            System.out.print("\n");
+        }
+        else // Recursive case
         {
             System.out.print(lineCharacter);
-            length--;
+            line(length-1, lineCharacter); // Call method again
         }
-        
-        // Drop to a new line after printing out a line
-        System.out.print("\n");
     }
     
     // Display the test banner
