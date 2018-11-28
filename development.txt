@@ -58,14 +58,14 @@ Chapter 10 - Interface Dependent Polymorphism:
   Brandon <------------------------------------------------(not done!)
   
 PDF on D2L - Software Development (JAR package):
-  BTOlson <------------------------------------------------(not done!)
+  BTOlson (done)
 
 Chapter 14 - Regex (Strings):
   IncludeKyle (done)
   
 Chapter 15 - I/O & Object Serialization 
   Mackbra (5x)(done)
-  BTOlson (5x) <------------------------------------------------(not done!)
+  BTOlson (5x) (done)
   
 Chapter 17 - Lambdas
   LagoonNebula1 (5x)(done)
