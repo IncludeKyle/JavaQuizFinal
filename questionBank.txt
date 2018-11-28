@@ -1,3 +1,68 @@
+? True or False: When classes are in the same package they have implicit access to eachother.
+PDF
+PG2
+(T)<
+(F)
+$
+? True or False: One package can only access public members of another package.
+PDF
+PG4
+(T)<
+(F)
+$
+? True or False: When executing a program, the class path must be specified.
+PDF
+PG4
+(T)<
+(F)
+$
+? True or False: If a class has no modifier in a package it recieves a default of package-private(only visible within that package).
+PDF
+PG4
+(T)<
+(F)
+$
+? True or False: Giving a designation of private allows for use of method or value in its own class.
+PDF 
+PG4
+(T)<
+(F)
+$
+? True or False: A protected value or method can only be accessed by another class in the same package or a subclass.
+PDF 
+PG4
+(T)<
+(F)
+$
+? A access level of having no modifier will have access to:
+PDF
+PG4
+(A) Class, and Subclass
+(B) Class, and Package
+(C) Class, Subclass, and Package<
+(D) Subclass, and Package
+$ A access level of a public modifier will have access to:
+PDF
+PG4
+(A) Class
+(B) Subclass
+(C) Package
+(D) Class, Subclass, Package, and World<
+$
+? A access level of a protected modifier will have access to:
+PDF
+PG4
+(A) Class,Subclass, and World
+(B) Class,Subclass, and Package<
+(C) Class,and Package
+(D) Class, and World
+$
+? True or False:In order to run a package, you have to reference the driver class through the package name.
+PDF
+PG6
+(T)<
+(F)
+$
 ? What is a character literal representing the upper case letter A?
 C14
 S2
@@ -317,6 +382,38 @@ S3
 (B) Formatter
 (C) Files
 (D) Path
+$
+? Given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that flushes any buffered outputon the stream associated with the object, releases any system resources associated with the object and ceases output operations on the associated stream.
+CH15
+S4
+(A) output.close();<
+(B) outputon.exit(); exit();
+$
+? Given an initialized String variable message, and given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that writes the string referenced by message to the file output streams to.
+CH15
+S4
+(A) output.print(message);<
+(B) System.out.print(message);
+$
+? Given a String variable named line1 and given a Scanner reference variable stdin that has been assigned a reference to a Scanner object, read the next line from stdin and save it in line1
+CH15
+S4
+(A) line1 = stdin.nextLine();<
+(B) total-=input.nextInt();
+(C) sc.nextLine(line1);
+$
+? Given a PrintWriter reference variable named output that references a PrintWriter object , write a statement that writes the string “Hello, World” to the file output streams to.
+CH15
+S4
+(A) System.out.print(“Hello, World”);
+(B) output.print("Hello, World");<
+$
+? One of the constructors for PrintStream class has a single OutputStream argument. Assume that dos is a variable that references an OutputStream object. How would you create a PrintStream object using dos and assign the resulting reference to ps, a PrintStream variable that has already been declared?
+CH15
+S7
+(A) printStream(dos);
+(B) ps= new PrintStream(dos);<
+(C) if(dos=true){ps= new PrintStream(dos);
 $
 ?  A file must be closed and reopened when wanting to read data in the file multiple times?
 C18
