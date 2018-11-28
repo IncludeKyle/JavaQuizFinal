@@ -19,7 +19,7 @@ interface QuestionParserMethods{
 }
 
 
-//This was originally class: public class StructureTest
+// This was originally class: public class StructureTest
 public class QuestionParser {
     
     // ===============================
@@ -82,6 +82,8 @@ public class QuestionParser {
             ArrayList<String> components = new ArrayList<>();
             ArrayList<String> tailQuestion;
             String correctAnswer;
+
+
 
             // Loop through the entire file
             while (inputFile.hasNext()) {

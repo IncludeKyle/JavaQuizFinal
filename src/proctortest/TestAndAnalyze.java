@@ -8,65 +8,69 @@ import java.util.Scanner;
  * @date    11-23-18
  * @authors (Paul Egbe, Kyle Blaha, Insert group names)
  **/
-public class TestAndAnalyze {
-    
+public class TestAndAnalyze extends TestUtilities{
+
     // ===============================
     // ====== Instance Variables =====
     // ===============================
     private ArrayList<Question> questionList = new ArrayList<>();
-    
+
     private int totalQuestions = 0; // Keeps track of how many questions were asked during test
     private int totalCorrect = 0;
     private double percentScore = 100;
-    
-    
+
+
     // ========================
     // ====== Constructor =====
     // ========================
     // Receives and sets the Question object list
     public TestAndAnalyze(ArrayList<Question> questionList)
-    {   
+    {
         // Set the instance list with the constructor parameter list
         this.questionList = questionList;
-        
+
         // Start the test
         runTest();
+
+        // Analyze the test result instance variables
+        analyzeFinalResult();
     }
-    
-    
+
+
     // ==========================
     // ===== Public Methods =====
     // ==========================
-    
+
     // Runs the test using the Question objects stored in the questionList
-    public void runTest() { 
-        
+    public void runTest() {
+
         int count = 1;
         String userAnswer;
         Scanner scanner = new Scanner(System.in);
-        
+
         // Display test banner
         displayTestBanner();
-        
+
         // Pull out each question object from the list
-        for (Question question : questionList) 
-        {            
+        for (Question question : questionList)
+        {
             // This string contains the question #, chapter, and section to display
             // to the user
-            String questionStats = 
+            String questionStats =
                         "[Question #" + count + " in " + question.getChapter() +
-                        " - " + question.getSection() + " Score: " + percentScore + "%]";
-            
-            
+                        " - " + question.getSection() + " | Score: (" + totalCorrect + "/" +
+                        totalQuestions + ")=" + percentScore + "%]";
+
+
             line(questionStats.length(), '='); // --line--
             System.out.println(questionStats); // Display origin of question to user
             line(questionStats.length(), '='); // --line--
-            
+
             // Display the question
             System.out.println(question.getHeadQuestion());
             line(50, '='); // --line--
-            
-            // Display each possible answer to user
+
+            // Display each possible answer 
             for (StringBuilder stringBuilder : question.getTailQuestion())
             {
                 System.out.println(stringBuilder);
@@ -75,30 +79,30 @@ public class TestAndAnalyze {
             System.out.print("--> ");
 
             // Gets and converts user input to upper-case
-            userAnswer = scanner.next().toUpperCase(); 
-            
+            userAnswer = scanner.next().toUpperCase();
+
             // Test user answer against the correct answer, record the results based on
             // chapter and section
             analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
-            
+
             // Update the score
             percentScore = 100*( (double)totalCorrect / (double)totalQuestions );
             percentScore = Math.floor(percentScore * 100) / 100;
-            
+
             // Display results after user answers a question in terminal 
             System.out.println("Answer is " + question.getCorrectAnswer());
             line(50, '-'); // --line--
-            
+
             // Increment the counter
             count++;
         }
     }
-    
-    
+
+
     // ===========================
     // ===== Private Methods =====
     // ===========================
-    
+
     // Test user answer against the correct answer, record the results based on
     // chapter and section
     private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter, StringBuilder section)
@@ -111,33 +115,25 @@ public class TestAndAnalyze {
         }
         else
             System.out.println("< Wrong! >");
-        
+
         // Increment +1 every time this method is called to keep track of how many
         // questions were asked
-        totalQuestions++; 
+        totalQuestions++;
     }
-    
-    // Create a custom output line of chars
-    private void line(int length, char lineCharacter)
+
+
+    // Finds the resulting score value for each chapter and section
+    private void analyzeFinalResult()
     {
-        // Loop to create custom line
-        while (length > 0)
-        {
-            System.out.print(lineCharacter);
-            length--;
-        }
-        
-        // Drop to a new line after printing out a line
-        System.out.print("\n");
+        double score = (double)totalCorrect / (double)totalQuestions;
+        score *= 100; // Make it a percent %
+
+        line(50, '+'); // --line--
+        System.out.println("Final score: " + score + "%");
+        line(50, '+'); // --line--
     }
-    
-    // Display the test banner
-    private void displayTestBanner()
-    {
-        // Make a title for the quiz when this method is called before looping
-        // through all of the questions
-        line(50, '#');
-        System.out.println("#                 < Final Quiz >                 #");
-        line(50, '#');
-    }
+
+
+
+
 }
