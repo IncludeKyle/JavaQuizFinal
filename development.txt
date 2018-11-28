@@ -68,7 +68,7 @@ Chapter 15 - I/O & Object Serialization
   BTOlson (5x) <------------------------------------------------(not done!)
   
 Chapter 17 - Lambdas
-  LagoonNebula1 (5x) <------------------------------------------------(not done!)
+  LagoonNebula1 (5x)(done)
   IncludeKyle   (done)
   
 Chapter 16 - Generic Classes & Methods 
