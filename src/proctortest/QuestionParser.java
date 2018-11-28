@@ -83,6 +83,8 @@ public class QuestionParser {
             ArrayList<String> tailQuestion;
             String correctAnswer;
 
+
+
             // Loop through the entire file
             while (inputFile.hasNext()) {
                 
