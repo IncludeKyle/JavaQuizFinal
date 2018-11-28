@@ -27,3 +27,4 @@ public abstract class TestUtilities {
         line(50, '#');
     }
 }
+
