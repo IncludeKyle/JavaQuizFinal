@@ -437,3 +437,39 @@ S0
 (T)  <
 (F)  
 $
+?What does a stream pipeline do?
+C17
+S2.3
+(A) Carry water from point A to point B
+(B) Moves the stream’s elements through a sequence of tasks(or processing steps)<
+(C) Is used to separate directories and files in a path
+(D) None of the above
+$
+?What static method produces a closed range of values?
+C17
+S2.3
+(A) rangeClosed<
+(B) range
+(C) sum
+(D) count
+$
+?A   ->   is called an “arrow token”?
+C17
+S3.2
+(A) true<
+(B) false
+$
+?The order of the operation in a stream pipeline matters
+C17
+S4
+(A) true<
+(B) false
+$
+?count, a terminal operations from the class IntStream returns:
+C17
+S7.2
+(A) the smallest int in the stream
+(B) the number of elements in the stream<
+(C) the sum of all the ints in the stream
+(D) nothing
+$
