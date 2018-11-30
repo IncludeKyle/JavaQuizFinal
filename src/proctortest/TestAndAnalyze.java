@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * @date    11-23-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * @authors (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 public class TestAndAnalyze extends TestUtilities{
 
