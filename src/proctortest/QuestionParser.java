@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * @authors (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 
 // Functional interface added for a lambda
