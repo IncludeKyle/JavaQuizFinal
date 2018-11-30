@@ -5,7 +5,7 @@ import java.io.IOException;
 
 /**
  * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Thanh Nguyen ,Insert group names)
+ * @authors (Paul Egbe, Kyle Blaha, Thanh Nguyen, Mackenzie Branch, Insert group names)
  **/
 
 // ========================
