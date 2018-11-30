@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * @authors (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 
 public class Question implements Comparable {
