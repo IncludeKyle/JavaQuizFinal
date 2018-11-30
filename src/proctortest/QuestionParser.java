@@ -93,6 +93,10 @@ public class QuestionParser {
 
                 // Uses the length to test for '$'
                 // If line from file is not $ -> add line to components array list, prepare for building each question
+              
+                // TODO Brandon: This could cause some hard to debug runtime errors (Like the infinite that was caused just now) if the questionBank.txt isn't 
+                // formatted exactly how it should be. For example if there is a space after $ or really any type of 
+                // character it can fail. Would suggest changing this to looking for a $ in the string.
                 if (lineFromFile.length() > 1) {
                     components.add(lineFromFile); // Add line to the components array list
                 }

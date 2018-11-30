@@ -23,13 +23,13 @@ PG4
 (F)
 $
 ? True or False: Giving a designation of private allows for use of method or value in its own class.
-PDF 
+PDF
 PG4
 (T)<
 (F)
 $
 ? True or False: A protected value or method can only be accessed by another class in the same package or a subclass.
-PDF 
+PDF
 PG4
 (T)<
 (F)
@@ -41,7 +41,8 @@ PG4
 (B) Class, and Package
 (C) Class, Subclass, and Package<
 (D) Subclass, and Package
-$ A access level of a public modifier will have access to:
+$
+? A access level of a public modifier will have access to:
 PDF
 PG4
 (A) Class
