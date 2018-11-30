@@ -4,8 +4,8 @@ package proctortest;
 import java.util.ArrayList;
 
 /**
- * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * date    11-21-18
+ * @author (Paul Egbe, Kyle Blaha, Insert group names)
  **/
 
 public class Question implements Comparable {

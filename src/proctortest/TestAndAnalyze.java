@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @date    11-23-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * date    11-23-18
+ * @author (Paul Egbe, Kyle Blaha, Insert group names)
  **/
 public class TestAndAnalyze extends TestUtilities{
 

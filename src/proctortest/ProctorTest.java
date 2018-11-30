@@ -4,8 +4,8 @@ package proctortest;
 import java.io.IOException;
 
 /**
- * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * Date    11-21-18
+ * @author (Paul Egbe, Kyle Blaha, Insert group names)
  **/
 
 // ========================
