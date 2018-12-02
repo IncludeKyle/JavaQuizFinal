@@ -47,9 +47,6 @@ public class QuestionParser {
         // Reads questionBank.txt to create objects of type Question,
         // adds the Question objects to the questionsBank array list instance
         loadQuestionBank();
-//        System.out.println("hello");
-
-
         
         // Sort questionBank list in ascending order
         Collections.sort(questionsBank);
@@ -89,8 +86,6 @@ public class QuestionParser {
             ArrayList<String> components = new ArrayList<>();
             ArrayList<String> tailQuestion;
             String correctAnswer;
-
-
 
             // Loop through the entire file
             while (inputFile.hasNext()) {
