@@ -23,13 +23,13 @@ PG4
 (F)
 $
 ? True or False: Giving a designation of private allows for use of method or value in its own class.
-PDF 
+PDF
 PG4
 (T)<
 (F)
 $
 ? True or False: A protected value or method can only be accessed by another class in the same package or a subclass.
-PDF 
+PDF
 PG4
 (T)<
 (F)
@@ -41,7 +41,8 @@ PG4
 (B) Class, and Package
 (C) Class, Subclass, and Package<
 (D) Subclass, and Package
-$ A access level of a public modifier will have access to:
+$
+? A access level of a public modifier will have access to:
 PDF
 PG4
 (A) Class
@@ -383,13 +384,13 @@ S3
 (C) Files
 (D) Path
 $
-? Given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that flushes any buffered outputon the stream associated with the object, releases any system resources associated with the object and ceases output operations on the associated stream.
+? Given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that flushes any buffered outputon the stream associated with the object, releases any system resources associated with the object and ceases output operations on the associated stream.
 CH15
 S4
 (A) output.close();<
 (B) outputon.exit(); exit();
 $
-? Given an initialized String variable message, and given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that writes the string referenced by message to the file output streams to.
+? Given an initialized String variable message, and given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that writes the string referenced by message to the file output streams to.
 CH15
 S4
 (A) output.print(message);<
@@ -408,7 +409,7 @@ S4
 (A) System.out.print(“Hello, World”);
 (B) output.print("Hello, World");<
 $
-? One of the constructors for PrintStream class has a single OutputStream argument. Assume that dos is a variable that references an OutputStream object. How would you create a PrintStream object using dos and assign the resulting reference to ps, a PrintStream variable that has already been declared?
+? One of the constructors for PrintStream class has a single OutputStream argument. Assume that dos is a variable that references an OutputStream object. How would you create a PrintStream object using dos and assign the resulting reference to ps, a PrintStream variable that has already been declared?
 CH15
 S7
 (A) printStream(dos);
