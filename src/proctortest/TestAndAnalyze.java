@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 /**
  * date    11-23-18
- * @author (Paul Egbe, Kyle Blaha, Insert group names)
+ * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 public class TestAndAnalyze extends TestUtilities{
 
@@ -127,13 +127,23 @@ public class TestAndAnalyze extends TestUtilities{
     {
         double score = (double)totalCorrect / (double)totalQuestions;
         score *= 100; // Make it a percent %
+        score = Math.floor(score * 100) / 100; // Round to 2 decimal places
+
 
         line(50, '+'); // --line--
         System.out.println("Final score: " + score + "%");
         line(50, '+'); // --line--
+
+        // Create an itemized score by chapter
+        // S7 (3/3)
+        // S14 (2/3)
+        // S23 (3/3)
+        // ---------
+        // Final: 92.5%
     }
 
 
 
 
 }
+
