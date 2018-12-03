@@ -53,9 +53,6 @@ public class QuestionParser {
         
         // Randomly pick 3 questions of each chapter, and build pickedQuest array list
         randomQuizQuest();
-        for (Question question: questionsBank){
-            System.out.println("Hello");
-        }
     }
 
     
