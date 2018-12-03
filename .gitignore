@@ -1,0 +1,72 @@
+# A simple ignore file that should help us keep the github
+# repo pretty clean so that it only contains the things we
+# need which is the code and any assets that the code depends on
+#
+# So this will block out things like project files and project
+# settings since each user will have different variants of these
+# it can cause merge conflicts pretty often.
+
+# Created by https://www.gitignore.io/api/java,netbeans,intellij
+# Edit at https://www.gitignore.io/?templates=java,netbeans,intellij
+
+
+#########################################################
+###                     NetBeans                      ###
+#########################################################
+**/nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+
+#########################################################
+###                     Intellij                      ###
+#########################################################
+
+# User specific settings ignore always.
+.idea/**/workspace.xml
+.idea/**/usage.statistics.xml
+.idea/**/tasks.xml
+
+# These files can be shared accross version control systems, but since
+# most of us are using multiple different IDE's and or text editors and build
+# systems I elected to just add them in since we don't need in the github
+# to keep IntelliJ projects up to date.
+
+*.iml
+.idea/**/misc.xml
+.idea/**/modules.xml
+.idea/**/vcs.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Build files aren't needed they can be generated from the source.
+out/
+
+
+#########################################################
+###                     Java stuff                    ###
+#########################################################
+
+# Just a bunch of random things that aren't needed on the
+# github and clog up the repo.
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
