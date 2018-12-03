@@ -29,18 +29,15 @@ nbdist/
 .idea/**/workspace.xml
 .idea/**/usage.statistics.xml
 .idea/**/tasks.xml
-
-# These files can be shared accross version control systems, but since
-# most of us are using multiple different IDE's and or text editors and build
-# systems I elected to just add them in since we don't need in the github
-# to keep IntelliJ projects up to date.
-
-*.iml
-.idea/**/misc.xml
-.idea/**/modules.xml
-.idea/**/vcs.xml
 .idea/**/dictionaries
 .idea/**/shelf
+
+# These files can be shared accross version control systems
+
+#.iml
+#.idea/**/misc.xml
+#.idea/**/modules.xml
+#.idea/**/vcs.xml
 
 # Build files aren't needed they can be generated from the source.
 out/
