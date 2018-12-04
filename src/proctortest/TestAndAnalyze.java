@@ -111,7 +111,7 @@ public class TestAndAnalyze extends TestUtilities{
 
             // Test user answer against the correct answer, record the results based on
             // chapter and section
-            analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
+            analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter());
 
             // Update the score
             percentScore = 100*( (double)totalCorrect / (double)totalQuestions );
@@ -133,7 +133,7 @@ public class TestAndAnalyze extends TestUtilities{
 
     // Test user answer against the correct answer, record the results based on
     // chapter and section
-    private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter, StringBuilder section)
+    private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter)
     {
 
         // Compare answer and correct answer
