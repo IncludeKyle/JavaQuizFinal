@@ -47,18 +47,12 @@ public class QuestionParser {
         // Reads questionBank.txt to create objects of type Question,
         // adds the Question objects to the questionsBank array list instance
         loadQuestionBank();
-//        System.out.println("hello");
-
-
         
         // Sort questionBank list in ascending order
         Collections.sort(questionsBank);
         
         // Randomly pick 3 questions of each chapter, and build pickedQuest array list
         randomQuizQuest();
-        for (Question question: questionsBank){
-            System.out.println("Hello");
-        }
     }
 
     
@@ -89,8 +83,6 @@ public class QuestionParser {
             ArrayList<String> components = new ArrayList<>();
             ArrayList<String> tailQuestion;
             String correctAnswer;
-
-
 
             // Loop through the entire file
             while (inputFile.hasNext()) {
