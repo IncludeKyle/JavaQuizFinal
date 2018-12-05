@@ -385,32 +385,32 @@ S3
 (D) Path
 $
 ? Given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that flushes any buffered outputon the stream associated with the object, releases any system resources associated with the object and ceases output operations on the associated stream.
-C15
+CH15
 S4
 (A) output.close();<
 (B) outputon.exit(); exit();
 $
 ? Given an initialized String variable message, and given a PrintWriter reference variable named output that references a PrintWriter object, write a statement that writes the string referenced by message to the file output streams to.
-C15
+CH15
 S4
 (A) output.print(message);<
 (B) System.out.print(message);
 $
 ? Given a String variable named line1 and given a Scanner reference variable stdin that has been assigned a reference to a Scanner object, read the next line from stdin and save it in line1
-C15
+CH15
 S4
 (A) line1 = stdin.nextLine();<
 (B) total-=input.nextInt();
 (C) sc.nextLine(line1);
 $
 ? Given a PrintWriter reference variable named output that references a PrintWriter object , write a statement that writes the string “Hello, World” to the file output streams to.
-C15
+CH15
 S4
 (A) System.out.print(“Hello, World”);
 (B) output.print("Hello, World");<
 $
 ? One of the constructors for PrintStream class has a single OutputStream argument. Assume that dos is a variable that references an OutputStream object. How would you create a PrintStream object using dos and assign the resulting reference to ps, a PrintStream variable that has already been declared?
-C15
+CH15
 S7
 (A) printStream(dos);
 (B) ps= new PrintStream(dos);<
@@ -562,79 +562,6 @@ C17
 S4
 (A) true<
 (B) false
-$
-?count, a terminal operations from the class IntStream returns:
-C17
-S7.2
-(A) the smallest int in the stream
-(B) the number of elements in the stream<
-(C) the sum of all the ints in the stream
-(D) nothing
-$
-? Lambdas remove the need for what?
-C17
-S0
-(A) Comments that clarify and explain code
-(B) Anonymous inner classes <
-(C) Semicolons at the end of code statements
-$
-? Concurrency is the ability to run several programs or several parts of a program in parallel
-C23
-S0
-(A) True <
-(B)  False
-$
-? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
-C23
-S0
-(A) True  <
-(B)  False
-$
-? Concurrency is another name for Parallelism.
-C23
-S0
-(A) True  
-(B) False <
-$
-? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
-C23
-S0
-(A) True 
-(B) False <
-$
-? Modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
-C23
-S0
-(A) True <
-(B)  False
-$
-?What does a stream pipeline do?
-C17
-S2.3
-(A) Carry water from point A to point B
-(B) Moves the stream’s elements through a sequence of tasks(or processing steps)<
-(C) Is used to separate directories and files in a path
-(D) None of the above
-$
-?What static method produces a closed range of values?
-C17
-S2.3
-(A) rangeClosed<
-(B) range
-(C) sum
-(D) count
-$
-?A   ->   is called an “arrow token”?
-C17
-S3.2
-(A) True<
-(B) False
-$
-?The  order of the operation in a stream pipeline matters
-C17
-S4
-(A) True<
-(B) False
 $
 ?count, a terminal operations from the class IntStream returns:
 C17
