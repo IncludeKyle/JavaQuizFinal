@@ -1,38 +1,38 @@
 ? True or False: When classes are in the same package they have implicit access to eachother.
 PDF
 PG2
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? True or False: One package can only access public members of another package.
 PDF
 PG4
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? True or False: When executing a program, the class path must be specified.
 PDF
 PG4
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? True or False: If a class has no modifier in a package it recieves a default of package-private(only visible within that package).
 PDF
 PG4
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? True or False: Giving a designation of private allows for use of method or value in its own class.
 PDF
 PG4
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? True or False: A protected value or method can only be accessed by another class in the same package or a subclass.
 PDF
 PG4
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? A access level of having no modifier will have access to:
 PDF
@@ -61,8 +61,8 @@ $
 ? True or False:In order to run a package, you have to reference the driver class through the package name.
 PDF
 PG6
-(T)<
-(F)
+(A) True<
+(B) False
 $
 ? What is a character literal representing the upper case letter A?
 C14
@@ -82,8 +82,8 @@ $
 ? If char x = 'A', Character.isUpperCase(x) will return?
 C14
 S2
-(T) True<
-(F) False
+(A) True<
+(B) False
 $
 ? String word = 'Name'; will assign the string to this variable?
 C14
@@ -119,8 +119,8 @@ $
 ? String word = "yeet"; (word.charAt(0) == 'y') will evaluate to?
 C14
 S3
-(T) True<
-(F) False
+(A) True<
+(B) False
 $
 ? Write the declaration of a String method that takes two String parameters:
 C14
@@ -171,20 +171,20 @@ $
 ?You can create an array and initialize its elements with an array initializer?
 C7
 S4.2
-(A) t<
-(B) f
+(A) True <
+(B) False
 $
 ?To pass an array argument to a method, specify the name of the array without any brackets?
 C7
 S8
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ?The collection class ArrayList<E> can dynamically change its size to accommodate more elements?
 C7
 S16
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ?What static method can be used to compare arrays?
 C7
@@ -205,20 +205,20 @@ $
 ?Unlike some other languages, Java does not allow you to choose pass-by-value or pass-by-reference-all arguments are passed by value?
 C7
 S9
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ? Superclass constructors are not inherited by subclasses. ?
 C9
 S2
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ? Methods of a subclass cannot directly access private members of their superclass. ?
 C9
 S3
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ? A subclass can change the state of private superclass instance variables only through: ?
 C9
@@ -229,8 +229,8 @@ $
 ? Declaring private instance variables helps you test, debug and correctly modify system. ?
 C9
 S3
-(A) t<
-(B) f
+(A) True<
+(B) False
 $
 ? Why does declare overridden method with annotation ‘@Override’ is a good idea ?
 C9
@@ -508,32 +508,32 @@ $
 ? Concurrency is the ability to run several programs or several parts of a program in parallel
 C23
 S0
-(T)  <
-(F)  
+(A) True <
+(B)  False
 $
 ? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
 C23
 S0
-(T)  <
-(F)  
+(A) True  <
+(B)  False
 $
 ? Concurrency is another name for Parallelism.
 C23
 S0
-(T)  
-(F)  <
+(A) True  
+(B) False <
 $
 ? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
 C23
 S0
-(T)  
-(F)  <
+(A) True 
+(B) False <
 $
 ? Modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
 C23
 S0
-(T)  <
-(F)  
+(A) True <
+(B)  False
 $
 ?What does a stream pipeline do?
 C17
@@ -554,14 +554,14 @@ $
 ?A   ->   is called an “arrow token”?
 C17
 S3.2
-(A) true<
-(B) false
+(A) True<
+(B) False
 $
-?The order of the operation in a stream pipeline matters
+?The  order of the operation in a stream pipeline matters
 C17
 S4
-(A) true<
-(B) false
+(A) True<
+(B) False
 $
 ?count, a terminal operations from the class IntStream returns:
 C17
