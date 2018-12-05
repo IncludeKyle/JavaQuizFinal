@@ -1,4 +1,3 @@
-
 package proctortest;
 
 import java.util.ArrayList;
@@ -6,9 +5,10 @@ import java.util.Scanner;
 
 /**
  * date    11-23-18
+ *
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
-public class TestAndAnalyze extends TestUtilities{
+public class TestAndAnalyze extends TestUtilities {
 
     // ===============================
     // ====== Instance Variables =====
@@ -24,8 +24,7 @@ public class TestAndAnalyze extends TestUtilities{
     // ====== Constructor =====
     // ========================
     // Receives and sets the Question object list
-    public TestAndAnalyze(ArrayList<Question> questionList)
-    {
+    public TestAndAnalyze(ArrayList<Question> questionList) {
         // Set the instance list with the constructor parameter list
         this.questionList = questionList;
 
@@ -52,14 +51,13 @@ public class TestAndAnalyze extends TestUtilities{
         displayTestBanner();
 
         // Pull out each question object from the list
-        for (Question question : questionList)
-        {
+        for (Question question : questionList) {
             // This string contains the question #, chapter, and section to display
             // to the user
             String questionStats =
-                        "[Question #" + count + " in " + question.getChapter() +
-                        " - " + question.getSection() + " | Score: (" + totalCorrect + "/" +
-                        totalQuestions + ")=" + percentScore + "%]";
+                    "[Question #" + count + " in " + question.getChapter() +
+                            " - " + question.getSection() + " | Score: (" + totalCorrect + "/" +
+                            totalQuestions + ")=" + percentScore + "%]";
 
 
             line(questionStats.length(), '='); // --line--
@@ -67,12 +65,11 @@ public class TestAndAnalyze extends TestUtilities{
             line(questionStats.length(), '='); // --line--
 
             // Display the question
-            System.out.println(question.getHeadQuestion());
+            System.out.println(question.getQuestion());
             line(50, '='); // --line--
 
             // Display each possible answer 
-            for (StringBuilder stringBuilder : question.getTailQuestion())
-            {
+            for (String stringBuilder : question.getWrongAnswers()) {
                 System.out.println(stringBuilder);
             }
             line(50, '='); // --line--
@@ -86,7 +83,7 @@ public class TestAndAnalyze extends TestUtilities{
             analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
 
             // Update the score
-            percentScore = 100*( (double)totalCorrect / (double)totalQuestions );
+            percentScore = 100 * ((double) totalCorrect / (double) totalQuestions);
             percentScore = Math.floor(percentScore * 100) / 100;
 
             // Display results after user answers a question in terminal 
@@ -105,15 +102,12 @@ public class TestAndAnalyze extends TestUtilities{
 
     // Test user answer against the correct answer, record the results based on
     // chapter and section
-    private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter, StringBuilder section)
-    {
+    private void analyzeAnswer(String answer, String correctAnswer, String chapter, String section) {
         // Compare answer and correct answer
-        if (correctAnswer.charAt(1) == answer.charAt(0))
-        {
+        if (correctAnswer.charAt(1) == answer.charAt(0)) {
             System.out.println("< Correct! >");
             totalCorrect++; // Update the score instance variable
-        }
-        else
+        } else
             System.out.println("< Wrong! >");
 
         // Increment +1 every time this method is called to keep track of how many
@@ -123,9 +117,8 @@ public class TestAndAnalyze extends TestUtilities{
 
 
     // Finds the resulting score value for each chapter and section
-    private void analyzeFinalResult()
-    {
-        double score = (double)totalCorrect / (double)totalQuestions;
+    private void analyzeFinalResult() {
+        double score = (double) totalCorrect / (double) totalQuestions;
         score *= 100; // Make it a percent %
         score = Math.floor(score * 100) / 100; // Round to 2 decimal places
 
@@ -141,8 +134,6 @@ public class TestAndAnalyze extends TestUtilities{
         // ---------
         // Final: 92.5%
     }
-
-
 
 
 }

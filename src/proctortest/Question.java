@@ -1,137 +1,121 @@
-
 package proctortest;
 
 import java.util.ArrayList;
 
 /**
  * date    11-21-18
+ *
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 
 public class Question implements Comparable {
-    
-    // ===============================
-    // ====== Instance Variables =====
-    // ===============================
-    private StringBuilder headQuestion;
-    private ArrayList<StringBuilder> tailQuestion = new ArrayList<>();
-    private StringBuilder correctAnswer;
-    private StringBuilder chapter;
-    private StringBuilder section;
+    private String question;
+    private ArrayList<String> wrongAnswers;
+    private String correctAnswer;
+    private String chapter;
+    private String section;
     private int sort;
 
-    
-    // =======================
-    // ===== Constructor =====
-    // =======================
-    public Question(
-            String headQuestion, ArrayList<String> tailQuestionInput, 
-            String correctAnswer, String chapter, String section) {
+    /**
+     * @param question      The question that is asked.
+     * @param wrongAnswers  An ArrayList of String that represent the wrong answers from the multiple choice questions.
+     * @param correctAnswer A string that represents the correct answer from the multiple choice questions.
+     * @param chapter       The chapter that the question came from.
+     * @param section       The section that the question came from.
+     */
+    public Question(String question, ArrayList<String> wrongAnswers, String correctAnswer, String chapter, String section) {
+        this.question = question;
+        this.wrongAnswers = wrongAnswers;
+        this.correctAnswer = correctAnswer;
+        this.chapter = chapter;
+        this.section = section;
 
-        // Converts strings received in the constructor to string 
-        // builders and stores them in the instance variables
-        this.headQuestion = convertToStringBuilder(headQuestion);
-        buildTailQuest(tailQuestionInput);
-        this.correctAnswer = convertToStringBuilder(correctAnswer);
-        this.chapter = convertToStringBuilder(chapter);
-        this.section = convertToStringBuilder(section);
-        
         setCh();        // Adds up ASCII values for use in the overriden compareTo()
-        modifyString(); // Invokes deleteSymbol() with different chars to remove
+        cleanUpQuestion(); // Invokes deleteSymbol() with different chars to remove
     }
 
-    
-    // ==========================
-    // ===== Public Methods =====
-    // ==========================
-    
-    // Setters and getters for each Question object
-    public StringBuilder getCorrectAnswer() {
+    /**
+     * @return The correct answer for the multiple choice question.
+     */
+    String getCorrectAnswer() {
         return correctAnswer;
     }
 
-    public StringBuilder getHeadQuestion() {
-        return headQuestion;
+    /**
+     * @return The multiple choice question itself.
+     */
+    String getQuestion() {
+        return question;
     }
 
-    public ArrayList<StringBuilder> getTailQuestion() {
-        return tailQuestion;
+    /**
+     * @return The wrong answers from the multiple choice question.
+     */
+    ArrayList<String> getWrongAnswers() {
+        return wrongAnswers;
     }
 
-    public StringBuilder getChapter() {
+    /**
+     * @return The chapter the question relates to.
+     */
+    String getChapter() {
         return chapter;
     }
 
-    public StringBuilder getSection() {
+    /**
+     * @return The section of the chapter the question relates to.
+     */
+    String getSection() {
         return section;
     }
 
-    // Sort instance variable is added up with the ASCII value of each char 
-    // in the StringBuilder chapter instance
-    public void setCh() {
+    /**
+     * Sort instance variable is added up with the ASCII value of each char.
+     * in the StringBuilder chapter instance.
+     */
+    private void setCh() {
         for (int i = 0; i < chapter.length(); i++) {
             sort += (int) chapter.charAt(i);
         }
     }
 
-    // Override method in Comparable interface to sort the question
+    /**
+     * Override method in Comparable interface to sort the question in ascending order.
+     *
+     * @param o Object to be compared to.
+     * @return 0 if equal, -1 if less than, 1 if greater than.
+     */
     @Override
-    public int compareTo(Object o) { 
+    public int compareTo(Object o) {
         int compareage = ((Question) o).sort;
-        // For ascending order
         return this.sort - compareage;
-        
-        // For descending order do this
-        // return compareage-this.sort;
     }
 
-    
-    // ============================
-    // ====== Private Methods =====
-    // ============================
-    
-    // Convert each string in a list to a StringBuilder and add it 
-    // to the tailQuestion instance list
-    private void buildTailQuest(ArrayList<String> tailQuest) {
-        
-        // For each string in the tailQuest list
-        for (String string : tailQuest) {
-            
-            // Convert the string to a StringBuilder and add it 
-            // to the tailQuestion instance list
-            tailQuestion.add(convertToStringBuilder(string));
-        }
+    /**
+     * Deletes '?' in the question, '<' and also deletes '<' in the correctAnswer.
+     */
+    private void cleanUpQuestion() {
+        question = deleteSymbol(question, '?');
+        correctAnswer = deleteSymbol(correctAnswer, '<');
     }
 
-    // Convert a String to a StringBuilder
-    private StringBuilder convertToStringBuilder(String str) { 
-        StringBuilder stringBuilder = new StringBuilder(str);
-        return stringBuilder;
-    }
+    /**
+     * Seeks out and removes a specified symbol in a StringBuilder object.
+     *
+     * @param string The string you would like to delete symbols from.
+     * @param symbol The symbol you would like to remove from the StringBuilder.
+     * @return A new string with all the characters specified by the symbol parameter removed.
+     */
+    private String deleteSymbol(String string, char symbol) {
+        StringBuilder temp = new StringBuilder(string);
 
-    // Deletes '?' in the headQuestion and deletes '<' in the tailQuestion
-    // Also deletes '<' in the correctAnswer
-    private void modifyString() {
-        
-        // Delete ? in the headQuestion
-        deleteSymbol(headQuestion, '?'); 
-        
-        // Delete < in the tailQuestion
-        for (StringBuilder stringBuilder : tailQuestion) {
-            deleteSymbol(stringBuilder, '<');
-        }
-        
-        // Delete < in the correctAnswer
-        deleteSymbol(correctAnswer, '<');
-    }
-
-    // Seeks out and removes a specified symbol in a StringBuilder object
-    private void deleteSymbol(StringBuilder stringBuilder, char symbol) {
-        for (int i = 0; i < stringBuilder.length(); i++) {
-            if ((int) stringBuilder.charAt(i) == (int) symbol) {
-                stringBuilder.deleteCharAt(i);
+        for (int i = 0; i < temp.length(); i++) {
+            if ((int) temp.charAt(i) == (int) symbol) {
+                temp.deleteCharAt(i);
                 break;
             }
         }
+
+        return temp.toString();
     }
 }

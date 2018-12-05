@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import java.util.concurrent.ExecutionException;
 
 /**
  * date 11-21-18
@@ -49,7 +48,7 @@ public class QuestionParser {
         try {
             questionsBank = fileManager.loadQuestionBankConcurrent(new File("questionBank.txt"));
             ArrayList<Question> test = fileManager.loadQuestionBank(new File("questionBank.txt"));
-        } catch (ExecutionException | InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

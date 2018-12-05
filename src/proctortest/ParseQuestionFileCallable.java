@@ -1,6 +1,7 @@
 package proctortest;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
@@ -15,58 +16,91 @@ import java.util.concurrent.Callable;
 class ParseQuestionFileCallable implements Callable {
     private long startOffset;
     private long endOffset;
-    private File workFile;
+    private RandomAccessFile questionFile;
 
-    ParseQuestionFileCallable(File file, long startOffsetBytes) {
-        this.startOffset = startOffsetBytes;
-        this.endOffset = -1;
-        workFile = file;
+    /**
+     * @param file The file to work off of.
+     * @throws IOException Opens up a file to be read from so can throw IOExceptions related to that.
+     */
+    ParseQuestionFileCallable(File file) throws IOException {
+        questionFile = new RandomAccessFile(file, "r");
+
+        this.startOffset = 0;
+        this.endOffset = questionFile.length();
     }
 
-    ParseQuestionFileCallable(File file, long startOffsetBtyes, long endOffsetBytes) {
+    /**
+     * @param file             The file to work off of
+     * @param startOffsetBytes How many bytes to offset the starting point of the file
+     * @throws IOException Opens up a file to be read from so can throw IOExceptions related to that.
+     */
+    ParseQuestionFileCallable(File file, long startOffsetBytes) throws IOException {
+        questionFile = new RandomAccessFile(file, "r");
+
+        this.startOffset = startOffsetBytes;
+        this.endOffset = questionFile.length();
+    }
+
+    /**
+     * @param file             The file to work off of
+     * @param startOffsetBtyes How many bytes to offset the starting point of the file
+     * @param endOffsetBytes   Determines where the end point is where we should stop parsing. This is the number of bytes from the start of the file
+     * @throws IOException Opens up a file to be read from so can throw IOExceptions related to that.
+     */
+    ParseQuestionFileCallable(File file, long startOffsetBtyes, long endOffsetBytes) throws IOException {
+        questionFile = new RandomAccessFile(file, "r");
+
         this.startOffset = startOffsetBtyes;
         this.endOffset = endOffsetBytes;
-        workFile = file;
     }
 
-    // A callable object to parse a portion of whatever file is given for our questions from a start offset
-    // to an end offset (Both in bytes). We can use this with an executor to offload parsing to
-    // multiple threads at once.
+    /**
+     * Parses the file it has been given from the starting point to the ending point (EOF if none was given) and takes
+     * all the question information within that file and stores it in an ArrayList full of Question objects.
+     *
+     * @return An ArrayList full of Question objects that represent all the questions that have been parsed by this callable
+     * @throws Exception Can throw exceptions related to file IO.
+     */
     public ArrayList<Question> call() throws Exception {
         ArrayList<Question> questionBank = new ArrayList<>();
+        questionFile.seek(startOffset);
 
-        try (RandomAccessFile questionFile = new RandomAccessFile(workFile, "r")) {
-            questionFile.seek(startOffset);
+        String line;
+        ArrayList<String> questionComponents = new ArrayList<>();
+        while (questionFile.getFilePointer() < endOffset && (line = questionFile.readLine()) != null) {
 
-            String line;
-            String correctAnswer;
-            ArrayList<String> tailQuestions;
-            ArrayList<String> questionComponents = new ArrayList<>();
-            while (questionFile.getFilePointer() < endOffset && (line = questionFile.readLine()) != null) {
+            // The $ symbol denotes the end of a question block in our text file. So we keep on
+            // storing all lines in an ArrayList until we hit that symbol then we use them to build
+            // up the Question object.
+            if (!line.contains("$")) {
+                questionComponents.add(line);
+            } else {
+                ArrayList<String> wrongAnswers = findWrongAnswers(questionComponents);
+                String correctAnswer = findCorrectAnswer(questionComponents);
 
-                // Search for $ to determine if the question block is done
-                if (!line.contains("$")) {
-                    questionComponents.add(line);
-                } else {
-                    tailQuestions = buildTailQuestion(questionComponents);
-                    correctAnswer = buildCorrectAnswer(questionComponents);
+                Question question = new Question(questionComponents.get(0), wrongAnswers, correctAnswer,
+                        questionComponents.get(1), questionComponents.get(2));
+                questionBank.add(question);
 
-                    Question question = new Question(questionComponents.get(0), tailQuestions, correctAnswer,
-                            questionComponents.get(1), questionComponents.get(2));
-                    questionBank.add(question);
-                    questionComponents.clear();
-                }
+                questionComponents.clear();
             }
         }
+
+        questionFile.close();
 
         return questionBank;
     }
 
-    // Uses the received components array list and a Regex to test for all answers in a
-    // question block
-    private ArrayList<String> buildTailQuestion(ArrayList<String> component) {
+    /**
+     * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
+     * and pull out all incorrect answers to the question.
+     *
+     * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers
+     * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer)
+     */
+    private ArrayList<String> findWrongAnswers(ArrayList<String> questionComponents) {
         ArrayList<String> tailQuestion = new ArrayList<>();
-        for (String tail : component) {
+        for (String tail : questionComponents) {
             if (tail.matches("[(].[)].*")) { // Regex to define a tail of a question
                 tailQuestion.add(tail);
             }
@@ -75,11 +109,16 @@ class ParseQuestionFileCallable implements Callable {
         return tailQuestion;
     }
 
-    // Uses the received components array list and a Regex to test for the one correct
-    // answer in a question block
-    private String buildCorrectAnswer(ArrayList<String> component) {
+    /**
+     * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
+     * and pull out all incorrect answers to the question.
+     *
+     * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers
+     * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer)
+     */
+    private String findCorrectAnswer(ArrayList<String> questionComponents) {
         String correctAnswer = "";
-        for (String string : component) {
+        for (String string : questionComponents) {
             if (string.matches("[(].[)].*[<]")) { // Regex to define correct answer of a question
                 correctAnswer = string;
             }
