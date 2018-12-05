@@ -159,7 +159,7 @@ public class TestAndAnalyze extends TestUtilities {
 
     /**
      * Finds the resulting score value for each chapter and section
-     * <p>
+     *
      * Create an itemized score by chapter
      * S7 (3/3)
      * S14 (2/3)
