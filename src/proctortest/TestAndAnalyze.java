@@ -141,7 +141,7 @@ public class TestAndAnalyze extends TestUtilities{
 
 
     private boolean isUserAnswerValid(String userAnswer){
-        return userAnswer.matches("[A]||[B]||[C]||[D]");
+        return userAnswer.matches("[A]||[B]||[C]||[D][T][F]");
     }
 
 }
