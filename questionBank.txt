@@ -1,38 +1,38 @@
 ? True or False: When classes are in the same package they have implicit access to eachother.
 PDF
 PG2
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? True or False: One package can only access public members of another package.
 PDF
 PG4
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? True or False: When executing a program, the class path must be specified.
 PDF
 PG4
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? True or False: If a class has no modifier in a package it recieves a default of package-private(only visible within that package).
 PDF
 PG4
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? True or False: Giving a designation of private allows for use of method or value in its own class.
 PDF
 PG4
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? True or False: A protected value or method can only be accessed by another class in the same package or a subclass.
 PDF
 PG4
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? A access level of having no modifier will have access to:
 PDF
@@ -61,8 +61,8 @@ $
 ? True or False:In order to run a package, you have to reference the driver class through the package name.
 PDF
 PG6
-(A) True<
-(B) False
+(T)<
+(F)
 $
 ? What is a character literal representing the upper case letter A?
 C14
@@ -82,8 +82,8 @@ $
 ? If char x = 'A', Character.isUpperCase(x) will return?
 C14
 S2
-(A) True<
-(B) False
+(T) True<
+(F) False
 $
 ? String word = 'Name'; will assign the string to this variable?
 C14
@@ -119,8 +119,8 @@ $
 ? String word = "yeet"; (word.charAt(0) == 'y') will evaluate to?
 C14
 S3
-(A) True<
-(B) False
+(T) True<
+(F) False
 $
 ? Write the declaration of a String method that takes two String parameters:
 C14
@@ -171,20 +171,20 @@ $
 ?You can create an array and initialize its elements with an array initializer?
 C7
 S4.2
-(A) True <
-(B) False
+(A) t<
+(B) f
 $
 ?To pass an array argument to a method, specify the name of the array without any brackets?
 C7
 S8
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ?The collection class ArrayList<E> can dynamically change its size to accommodate more elements?
 C7
 S16
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ?What static method can be used to compare arrays?
 C7
@@ -205,20 +205,20 @@ $
 ?Unlike some other languages, Java does not allow you to choose pass-by-value or pass-by-reference-all arguments are passed by value?
 C7
 S9
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ? Superclass constructors are not inherited by subclasses. ?
 C9
 S2
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ? Methods of a subclass cannot directly access private members of their superclass. ?
 C9
 S3
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ? A subclass can change the state of private superclass instance variables only through: ?
 C9
@@ -229,8 +229,8 @@ $
 ? Declaring private instance variables helps you test, debug and correctly modify system. ?
 C9
 S3
-(A) True<
-(B) False
+(A) t<
+(B) f
 $
 ? Why does declare overridden method with annotation ‘@Override’ is a good idea ?
 C9
@@ -497,6 +497,79 @@ C17
 S0
 (T) True <
 (F) False
+$
+? Lambdas remove the need for what?
+C17
+S0
+(A) Comments that clarify and explain code
+(B) Anonymous inner classes <
+(C) Semicolons at the end of code statements
+$
+? Concurrency is the ability to run several programs or several parts of a program in parallel
+C23
+S0
+(T)  <
+(F)  
+$
+? A thread is a lightweight process which has its own call stack, but can access shared data of other threads in the same process
+C23
+S0
+(T)  <
+(F)  
+$
+? Concurrency is another name for Parallelism.
+C23
+S0
+(T)  
+(F)  <
+$
+? sleep() is not method and its not used to pause a process for few seconds or a period time we want to.
+C23
+S0
+(T)  
+(F)  <
+$
+? Modern computers has several CPU’s or several cores within one CPU, enabling programs to utilize all cores for some part of processing.
+C23
+S0
+(T)  <
+(F)  
+$
+?What does a stream pipeline do?
+C17
+S2.3
+(A) Carry water from point A to point B
+(B) Moves the stream’s elements through a sequence of tasks(or processing steps)<
+(C) Is used to separate directories and files in a path
+(D) None of the above
+$
+?What static method produces a closed range of values?
+C17
+S2.3
+(A) rangeClosed<
+(B) range
+(C) sum
+(D) count
+$
+?A   ->   is called an “arrow token”?
+C17
+S3.2
+(A) true<
+(B) false
+$
+?The order of the operation in a stream pipeline matters
+C17
+S4
+(A) true<
+(B) false
+$
+?count, a terminal operations from the class IntStream returns:
+C17
+S7.2
+(A) the smallest int in the stream
+(B) the number of elements in the stream<
+(C) the sum of all the ints in the stream
+(D) nothing
 $
 ? Lambdas remove the need for what?
 C17
