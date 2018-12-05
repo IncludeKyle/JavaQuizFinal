@@ -83,7 +83,7 @@ public class TestAndAnalyze extends TestUtilities{
 
 
             while (!isUserAnswerValid(userAnswer)){
-                System.out.println("The answer is not valid!");
+                System.out.println("The answer is not valid! Re-enter:");
                 userAnswer = scanner.next().toUpperCase();
             }
 
