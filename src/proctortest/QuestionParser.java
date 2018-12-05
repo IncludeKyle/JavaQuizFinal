@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  * @date    11-21-18
- * @authors (Paul Egbe, Kyle Blaha, Insert group names)
+ * @authors (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 
 // Functional interface added for a lambda
@@ -42,16 +42,17 @@ public class QuestionParser {
     // ====== Constructor =====
     // ========================
     public QuestionParser() {
+
         
         // Reads questionBank.txt to create objects of type Question,
         // adds the Question objects to the questionsBank array list instance
         loadQuestionBank();
         
         // Sort questionBank list in ascending order
-        Collections.sort(questionsBank); 
+        Collections.sort(questionsBank);
         
         // Randomly pick 3 questions of each chapter, and build pickedQuest array list
-        randomQuizQuest(); 
+        randomQuizQuest();
     }
 
     
@@ -83,8 +84,6 @@ public class QuestionParser {
             ArrayList<String> tailQuestion;
             String correctAnswer;
 
-
-
             // Loop through the entire file
             while (inputFile.hasNext()) {
                 
@@ -93,10 +92,6 @@ public class QuestionParser {
 
                 // Uses the length to test for '$'
                 // If line from file is not $ -> add line to components array list, prepare for building each question
-              
-                // TODO Brandon: This could cause some hard to debug runtime errors (Like the infinite that was caused just now) if the questionBank.txt isn't 
-                // formatted exactly how it should be. For example if there is a space after $ or really any type of 
-                // character it can fail. Would suggest changing this to looking for a $ in the string.
                 if (lineFromFile.length() > 1) {
                     components.add(lineFromFile); // Add line to the components array list
                 }
