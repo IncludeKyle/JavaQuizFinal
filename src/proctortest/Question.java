@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
  **/
 
-public class Question implements Comparable {
+public class Question implements Comparable<Question> {
     private String question;
     private ArrayList<String> wrongAnswers;
     private String correctAnswer;
@@ -82,13 +82,12 @@ public class Question implements Comparable {
     /**
      * Override method in Comparable interface to sort the question in ascending order.
      *
-     * @param o Object to be compared to.
+     * @param question Question object to be compared to.
      * @return 0 if equal, -1 if less than, 1 if greater than.
      */
     @Override
-    public int compareTo(Object o) {
-        int compareage = ((Question) o).sort;
-        return this.sort - compareage;
+    public int compareTo(Question question) {
+        return this.sort - question.sort;
     }
 
     /**

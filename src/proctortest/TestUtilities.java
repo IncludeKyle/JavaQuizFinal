@@ -1,11 +1,15 @@
 
 package proctortest;
 
-public abstract class TestUtilities {
-
-    // Recursive method to satisfy the recursion requirement in the project
-    // Create a custom output line of chars
-    public static void line(int length, char lineCharacter) {
+abstract class TestUtilities {
+    /**
+     * Creates a custom line of the specified character on the standard output.
+     *
+     * @param length        The number of characters you want the line to be.
+     * @param lineCharacter The character you want the line to be made up of.
+     * @final.requirement Satisfies the recursion requirement for the final.
+     */
+    static void line(int length, char lineCharacter) {
         if (length <= 0) // Base case
         {
             // Drop to a new line after printing out a line
@@ -13,12 +17,14 @@ public abstract class TestUtilities {
         } else // Recursive case
         {
             System.out.print(lineCharacter);
-            line(length - 1, lineCharacter); // Call method again
+            line(length - 1, lineCharacter);
         }
     }
 
-    // Display the test banner
-    public static void displayTestBanner()
+    /**
+     * Displays a banner for the test.
+     */
+    static void displayTestBanner()
     {
         // Make a title for the quiz when this method is called before looping
         // through all of the questions
