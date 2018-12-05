@@ -16,6 +16,9 @@ public class TestAndAnalyze extends TestUtilities{
     // ===============================
     private ArrayList<Question> questionList = new ArrayList<>();
     private ArrayList<String> listOfChapters = new ArrayList<>(); // Stores each unique test chapter 
+    
+    private final WriteToFile wtf = new WriteToFile();
+    
     private int chapterIndex = 0;
     private int[] chapterScore; // Parallel int array stores each chapter's score
     private String currentChapter;
@@ -54,6 +57,9 @@ public class TestAndAnalyze extends TestUtilities{
         boolean setFirstChapter = false;
         Scanner scanner = new Scanner(System.in);
 
+        // Prompt user to input their name
+        wtf.fileWrite(count);
+        
         // Display test banner
         displayTestBanner();
         
@@ -116,6 +122,10 @@ public class TestAndAnalyze extends TestUtilities{
                 userAnswer = scanner.next().toUpperCase();
             }
             
+            // Build text file
+            wtf.fileWrite(  count, question.getHeadQuestion(), question.getTailQuestion(), userAnswer, 
+                            question.getCorrectAnswer(), question.getChapter(),question.getSection());
+            
             // Test user answer against the correct answer, record the results based on
             // chapter and section
             analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
@@ -123,6 +133,9 @@ public class TestAndAnalyze extends TestUtilities{
             // Update the score
             percentScore = 100*( (double)totalCorrect / (double)totalQuestions );
             percentScore = Math.floor(percentScore * 100) / 100;
+            
+            // Write percent to text file
+            wtf.fileWrite(percentScore);
 
             // Display results after user answers a question in terminal 
             System.out.println("Answer is " + question.getCorrectAnswer());
@@ -152,6 +165,7 @@ public class TestAndAnalyze extends TestUtilities{
         if (correctAnswer.charAt(1) == answer.charAt(0))
         {
             System.out.println("< Correct!>");
+            wtf.fileWrite("Correct!"); // Output to file
             totalCorrect++; // Update the score instance variable
             
             // If this detects that chapter is != currentChapter 
@@ -171,6 +185,7 @@ public class TestAndAnalyze extends TestUtilities{
         else
         {
             System.out.println("< Wrong!>");
+            wtf.fileWrite("Wrong!"); // Output to file
             
             if ( !chapter.toString().equals(currentChapter) )
             {
