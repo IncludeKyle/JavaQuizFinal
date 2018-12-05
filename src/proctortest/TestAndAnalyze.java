@@ -40,21 +40,18 @@ public class TestAndAnalyze extends TestUtilities {
         displayTestBanner();
 
         // Pull out each question object to see how many chapters there will be
-        for (Question question : questionList)
-        {
+        for (Question question : questionBank) {
             // Convert the StringBuilder chapter to a string
             String convertedStringBuilder = question.getChapter().toString();
 
             // If chapter is not in list, add it to the list
-            if ( !listOfChapters.contains(convertedStringBuilder) )
-            {
+            if (!listOfChapters.contains(convertedStringBuilder)) {
                 // Add that chapter to the chapter name list
                 listOfChapters.add(convertedStringBuilder);
             }
 
             // Also set the starting chapter
-            if (!setFirstChapter)
-            {
+            if (!setFirstChapter) {
                 currentChapter = convertedStringBuilder;
                 setFirstChapter = true;
             }
@@ -79,7 +76,7 @@ public class TestAndAnalyze extends TestUtilities {
             line(50, '='); // --line--
 
             // Display each possible answer 
-            for (String stringBuilder : question.getWrongAnswers()) {
+            for (String stringBuilder : question.getAllAnswers()) {
                 System.out.println(stringBuilder);
             }
             line(50, '='); // --line--
@@ -89,8 +86,7 @@ public class TestAndAnalyze extends TestUtilities {
             userAnswer = scanner.next().toUpperCase();
 
             // Loop until valid input is given
-            while (!isUserAnswerValid(userAnswer))
-            {
+            while (!isUserAnswerValid(userAnswer)) {
                 System.out.println("The answer is not valid! Re-enter:");
                 userAnswer = scanner.next().toUpperCase();
             }
@@ -112,8 +108,13 @@ public class TestAndAnalyze extends TestUtilities {
         }
     }
 
-    // Method returns true if answer matches the Regex pattern
-    private boolean isUserAnswerValid(String userAnswer){
+    /**
+     * Input validation to make sure the user entered.
+     *
+     * @param userAnswer Which answer the user selected.
+     * @return Boolean depending on whether it matches the "[A]||[B]||[C]||[D]||[T]||[F]" regex.
+     */
+    private boolean isUserAnswerValid(String userAnswer) {
         return userAnswer.matches("[A]||[B]||[C]||[D]||[T]||[F]");
     }
 
@@ -126,8 +127,7 @@ public class TestAndAnalyze extends TestUtilities {
      * @param chapter       The chapter the question's content originated from.
      * @param section       The section of the chapter the question's content originated from.
      */
-    private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter, StringBuilder section)
-    {
+    private void analyzeAnswer(String answer, String correctAnswer, String chapter, String section) {
 
         // Compare answer and correct answer
         if (correctAnswer.charAt(1) == answer.charAt(0)) {
@@ -136,7 +136,7 @@ public class TestAndAnalyze extends TestUtilities {
 
             // If this detects that chapter is != currentChapter
             // it knows the chapter has changed and it will update accordingly
-            if ( chapter.toString().equals(currentChapter) ) {
+            if (chapter.toString().equals(currentChapter)) {
                 chapterScore[chapterIndex]++; // Add +1 point to the respective chapter score
             } else {
                 currentChapter = chapter.toString(); // Update current chapter
@@ -146,7 +146,7 @@ public class TestAndAnalyze extends TestUtilities {
         } else {
             System.out.println("< Wrong!>");
 
-            if ( !chapter.toString().equals(currentChapter) ) {
+            if (!chapter.toString().equals(currentChapter)) {
                 currentChapter = chapter.toString(); // Update current chapter
                 chapterIndex++; // Update chapter score index +1 to move to next chapter
             }
@@ -159,7 +159,7 @@ public class TestAndAnalyze extends TestUtilities {
 
     /**
      * Finds the resulting score value for each chapter and section
-     *
+     * <p>
      * Create an itemized score by chapter
      * S7 (3/3)
      * S14 (2/3)
@@ -178,8 +178,7 @@ public class TestAndAnalyze extends TestUtilities {
         line(50, '#'); // --line--
 
         // Make the list of chapters into a string array
-        for (int x = 0; x < listOfChapters.size(); x++)
-        {
+        for (int x = 0; x < listOfChapters.size(); x++) {
             // Print chapter name
             System.out.print(listOfChapters.get(x));
 

@@ -1,4 +1,3 @@
-
 package proctortest;
 
 public abstract class TestUtilities {
@@ -19,8 +18,13 @@ public abstract class TestUtilities {
         }
     }
 
-    // A generic and recursive method to satisfy the generics and recursion requirement in the project
-    // Create a custom output line of a generic value-- in this case, a line of chars
+    /**
+     * Create a custom output line of a generic values for a bar graph.
+     *
+     * @param length        The length of the line.
+     * @param lineCharacter The character you want the line to be made up of.
+     * @param maxLength     The maximum length that the bar graph line can be.
+     */
     public static <T> void barGraphLine(int length, T lineCharacter, int maxLength) {
 
         // Inflate the scale
@@ -33,15 +37,13 @@ public abstract class TestUtilities {
         System.out.print("[");
 
         // Make a line of symbols
-        while (length > 0)
-        {
+        while (length > 0) {
             System.out.print(lineCharacter);
             length--;
         }
 
         // Make the rest of the line with blank spaces as filler
-        while (difference > 0)
-        {
+        while (difference > 0) {
             System.out.print(' ');
             difference--;
         }
@@ -52,8 +54,7 @@ public abstract class TestUtilities {
     /**
      * Displays a banner for the test.
      */
-    static void displayTestBanner()
-    {
+    static void displayTestBanner() {
         // Make a title for the quiz when this method is called before looping
         // through all of the questions
         line(50, '#');
