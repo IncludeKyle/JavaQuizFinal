@@ -3,9 +3,8 @@ package proctortest;
 import java.io.File;
 
 /**
- * Date    11-21-18
- *
- * @author (Paul Egbe, Kyle Blaha, Insert group names)
+ * @date    11-21-18
+ * @authors (Paul Egbe, Kyle Blaha, Thanh Nguyen, Mackenzie Branch, Insert group names)
  **/
 
 public class ProctorTest {
