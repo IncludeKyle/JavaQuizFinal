@@ -1,28 +1,19 @@
-
 package proctortest;
 
-import java.io.IOException;
+import java.io.File;
 
 /**
  * @date    11-21-18
  * @authors (Paul Egbe, Kyle Blaha, Thanh Nguyen, Mackenzie Branch, Insert group names)
  **/
 
-// ========================
-// ===== Driver class =====
-// ========================
-// This was originally public class Driver
 public class ProctorTest {
-
-    // Main method
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) {
         // Create a QuestionParser object which will parse the designated questionBank.txt
         // file and create a list of Question objects
-        QuestionParser parser = new QuestionParser();
-        
+        QuestionParser parser = new QuestionParser(new File("questionBank.txt"));
+
         // Starts the test using the Question objects stored in this parser object
         parser.runTest();
-    } 
-    
+    }
 }
