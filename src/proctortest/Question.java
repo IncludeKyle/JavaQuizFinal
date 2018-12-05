@@ -5,12 +5,12 @@ import java.util.ArrayList;
 /**
  * date    11-21-18
  *
- * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Insert group names)
+ * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck Insert group names)
  **/
 
 public class Question implements Comparable<Question> {
     private String question;
-    private ArrayList<String> wrongAnswers;
+    private ArrayList<String> allAnswers;
     private String correctAnswer;
     private String chapter;
     private String section;
@@ -18,14 +18,14 @@ public class Question implements Comparable<Question> {
 
     /**
      * @param question      The question that is asked.
-     * @param wrongAnswers  An ArrayList of String that represent the wrong answers from the multiple choice questions.
+     * @param allAnswers  An ArrayList of String that represents the answers from the multiple choice questions.
      * @param correctAnswer A string that represents the correct answer from the multiple choice questions.
      * @param chapter       The chapter that the question came from.
      * @param section       The section that the question came from.
      */
-    public Question(String question, ArrayList<String> wrongAnswers, String correctAnswer, String chapter, String section) {
+    public Question(String question, ArrayList<String> allAnswers, String correctAnswer, String chapter, String section) {
         this.question = question;
-        this.wrongAnswers = wrongAnswers;
+        this.allAnswers = allAnswers;
         this.correctAnswer = correctAnswer;
         this.chapter = chapter;
         this.section = section;
@@ -49,10 +49,10 @@ public class Question implements Comparable<Question> {
     }
 
     /**
-     * @return The wrong answers from the multiple choice question.
+     * @return All answers for the multiple choice question.
      */
-    ArrayList<String> getWrongAnswers() {
-        return wrongAnswers;
+    ArrayList<String> getAllAnswers() {
+        return allAnswers;
     }
 
     /**
@@ -95,7 +95,10 @@ public class Question implements Comparable<Question> {
      */
     private void cleanUpQuestion() {
         question = deleteSymbol(question, '?');
-        correctAnswer = deleteSymbol(correctAnswer, '<');
+      
+        for (int i = 0; i != allAnswers.size(); ++i) {
+          allAnswers.set(i, deleteSymbol(allAnswers.get(i), '<'));
+        }
     }
 
     /**

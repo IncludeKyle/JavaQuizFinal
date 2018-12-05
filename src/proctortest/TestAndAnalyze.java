@@ -40,7 +40,7 @@ public class TestAndAnalyze extends TestUtilities {
         displayTestBanner();
 
         // Pull out each question object to see how many chapters there will be
-        for (Question question : questionList)
+        for (Question question : questionBank)
         {
             // Convert the StringBuilder chapter to a string
             String convertedStringBuilder = question.getChapter().toString();
@@ -79,8 +79,8 @@ public class TestAndAnalyze extends TestUtilities {
             line(50, '='); // --line--
 
             // Display each possible answer 
-            for (String stringBuilder : question.getWrongAnswers()) {
-                System.out.println(stringBuilder);
+            for (String answer : question.getAllAnswers()) {
+                System.out.println(answer);
             }
             line(50, '='); // --line--
             System.out.print("--> ");
@@ -126,9 +126,8 @@ public class TestAndAnalyze extends TestUtilities {
      * @param chapter       The chapter the question's content originated from.
      * @param section       The section of the chapter the question's content originated from.
      */
-    private void analyzeAnswer(String answer, StringBuilder correctAnswer, StringBuilder chapter, StringBuilder section)
+    private void analyzeAnswer(String answer, String correctAnswer, String chapter, String section)
     {
-
         // Compare answer and correct answer
         if (correctAnswer.charAt(1) == answer.charAt(0)) {
             System.out.println("< Correct! >");
