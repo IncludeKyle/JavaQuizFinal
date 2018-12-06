@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * date    11-23-18
  *
- * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck, Insert group names)
+ * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck, Brady Olson)
  **/
 public class Test extends TestUtilities {
     private FileManager fileManager;
