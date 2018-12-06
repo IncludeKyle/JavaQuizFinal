@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
+ * In charge of everything related to taking a single test. It get's passed a question
+ * bank and uses that to administer the test.
+ *
  * date    11-23-18
  *
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck, Insert group names)
  **/
-public class TestAndAnalyze extends TestUtilities {
+public class Test extends TestUtilities {
     private ArrayList<Question> questionBank;
     private int totalQuestionsAsked = 0;
     private ArrayList<String> listOfChapters = new ArrayList<>(); // Stores each unique test chapter
@@ -20,11 +23,8 @@ public class TestAndAnalyze extends TestUtilities {
     private int totalCorrect = 0;
     private double percentScore = 100;
 
-    public TestAndAnalyze(ArrayList<Question> questionBank) {
-        this.questionBank = questionBank;
-
-        runTest();
-        analyzeFinalResult();
+    public Test(ArrayList<Question> questionList) {
+        this.questionBank = questionList;
     }
 
     /**
@@ -109,6 +109,38 @@ public class TestAndAnalyze extends TestUtilities {
     }
 
     /**
+     * Finds the resulting score value for each chapter and section
+     * <p>
+     * Create an itemized score by chapter
+     * S7 (3/3)
+     * S14 (2/3)
+     * S23 (3/3)
+     * ---------
+     * Final: 92.5%
+     */
+    public void analyzeFinalResult() {
+        double score = (double) totalCorrect / (double) totalQuestionsAsked;
+        score *= 100; // Make it a percent %
+        score = Math.floor(score * 100) / 100; // Round to 2 decimal places
+
+
+        line(50, '#'); // --line--
+        System.out.println("Final score: " + score + "%");
+        line(50, '#'); // --line--
+
+        // Make the list of chapters into a string array
+        for (int x = 0; x < listOfChapters.size(); x++) {
+            // Print chapter name
+            System.out.print(listOfChapters.get(x));
+
+            // Bar graph of chapter score
+            barGraphLine(chapterScore[x], '=', 3);
+        }
+
+        line(50, '#'); // --line--
+    }
+
+    /**
      * Input validation to make sure the user entered.
      *
      * @param userAnswer Which answer the user selected.
@@ -155,37 +187,5 @@ public class TestAndAnalyze extends TestUtilities {
         // Increment +1 every time this method is called to keep track of how many
         // questions were asked
         totalQuestionsAsked++;
-    }
-
-    /**
-     * Finds the resulting score value for each chapter and section
-     *
-     * Create an itemized score by chapter
-     * S7 (3/3)
-     * S14 (2/3)
-     * S23 (3/3)
-     * ---------
-     * Final: 92.5%
-     */
-    private void analyzeFinalResult() {
-        double score = (double) totalCorrect / (double) totalQuestionsAsked;
-        score *= 100; // Make it a percent %
-        score = Math.floor(score * 100) / 100; // Round to 2 decimal places
-
-
-        line(50, '#'); // --line--
-        System.out.println("Final score: " + score + "%");
-        line(50, '#'); // --line--
-
-        // Make the list of chapters into a string array
-        for (int x = 0; x < listOfChapters.size(); x++) {
-            // Print chapter name
-            System.out.print(listOfChapters.get(x));
-
-            // Bar graph of chapter score
-            barGraphLine(chapterScore[x], '=', 3);
-        }
-
-        line(50, '#'); // --line--
     }
 }
