@@ -6,18 +6,16 @@ import java.util.*;
  * Holds a large question bank of possible test questions which it can use to
  * generate questions lists that test's can use for their tests.
  *
+ * @final.requirement Exceptions
+ *
  * date 11-21-18
  *
- * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck Insert group names)
+ * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck)
  **/
 
-interface QuestionParserMethods {
-    boolean checkDuplicateMethod(ArrayList<Integer> arr, int num);
-}
 
 public class QuestionBank {
-    private ArrayList<Question> questionsBank = new ArrayList<>();
-    private Random random = new Random();
+    private ArrayList<Question> questionsBank;
 
     /**
      * Creates a questionBank

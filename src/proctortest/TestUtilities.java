@@ -1,12 +1,22 @@
 package proctortest;
 
+/**
+ * A utilities class which helps with various little things required in the test taking process
+ * <p>
+ * Date    12-03-18
+ *
+ * @author (Kyle Blaha)
+ * @final.requirement Generics, Recursion
+ **/
+
 public abstract class TestUtilities {
     /**
      * Creates a custom line of the specified character on the standard output.
      *
+     * @final.requirement Generics, Recursion
+     *
      * @param length        The number of characters you want the line to be.
      * @param lineCharacter The character you want the line to be made up of.
-     * @final.requirement Satisfies the recursion and generic requirements for the final.
      */
     public static <T> void line(int length, T lineCharacter) {
         if (length <= 0) {
@@ -20,6 +30,8 @@ public abstract class TestUtilities {
 
     /**
      * Create a custom output line of a generic values for a bar graph.
+     *
+     * @final.requirement Generics
      *
      * @param length        The length of the line.
      * @param lineCharacter The character you want the line to be made up of.

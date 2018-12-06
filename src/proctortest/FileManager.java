@@ -9,7 +9,12 @@ import java.util.Scanner;
 import java.util.concurrent.*;
 
 /**
+ * A class that manages everything the project needs to handle when it comes to writing, reading and parsing information
+ * from/to files.
+ *
  * Date    12-03-18
+ *
+ * @final.requirement Concurrency, Exceptions, Regex
  *
  * @author (Paul Egbe, Brandon Jumbeck, Insert group names)
  **/
@@ -24,7 +29,11 @@ public class FileManager {
     /**
      * Multi-threaded solution which parses questions from the file that is passed in to the questionBankFile parameter.
      * It does this by using 2 threads and splitting the file in roughly half to concurrently read each portion's questions
-     * and store them in a container.
+     * and store them in a container. While at this point we don't see much if any speedup from using multiple threads
+     * to parse our questions from the text file, if the file was let's say full of 100k or more question then it would
+     * definitely increase the programs efficiency.
+     *
+     * @final.requirement Concurrency, Exceptions
      *
      * @param questionBankFile The question bank you would like to parse. Must be formatted a certain way to work see questionBank.txt for example.
      * @return An ArrayList full of Question objects which represent a single question for the test.
@@ -76,6 +85,8 @@ public class FileManager {
     /**
      * Non-threaded solution which parses questions from the file that is passed in to the questionBankFile parameter.
      *
+     * @final.requirement Exceptions
+     *
      * @param questionBankFile The question bank you would like to parse. Must be formatted a certain way to work see questionBank.txt for example.
      * @return An ArrayList full of Question objects which represent a single question for the test.
      * @throws FileNotFoundException Throws FileNotFoundException when unable to locate the questionBankFile specified.
@@ -110,11 +121,11 @@ public class FileManager {
         return questionBank;
     }
 
-    // TODO: If time refactor this method so that it doesn't write to a file after every question.
-    // Instead it should only write the results to a file after the whole test is finished to be more optimized.
-    // Writing to a disk is slow. It is also missing the total percentage correct.
+    // TODO: If time refactor this method so that it doesn't write to a file after every question and instead once per test
     /**
      * Save all the user's results from his/her test to a file.
+     *
+     * @final.requirement Exceptions
      *
      * @param questionNum The current question number.
      * @param question A Question object that holds information about the question taken.
@@ -146,7 +157,12 @@ public class FileManager {
         bw.close();
     }
 
-    // Scan userName for text file name
+    /**
+     * Converts the user name passed in to a format that we can use to save that users test info into a file.
+     *
+     * @param userName The full name of the user taking the test
+     * @final.requirement Regex
+     */
     void setUsernameForFile(String userName) {
         userOutputFile = userName + "_" + new SimpleDateFormat("yyyy-MM-dd HHmm'.txt'").format(new Date());
     }
@@ -157,12 +173,15 @@ public class FileManager {
      * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
      * and pull out all incorrect answers to the question.
      *
+     * @final.requirement Regex
+     *
      * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers.
      * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer).
      */
     private ArrayList<String> findWrongAnswers(ArrayList<String> questionComponents) {
         ArrayList<String> tailQuestion = new ArrayList<>();
         for (String tail : questionComponents) {
+            // Satisfies the regex requirement of the project. Though we use regex elsewhere in the project also.
             if (tail.matches("[(].[)].*")) { // Regex to define a tail of a question
                 tailQuestion.add(tail);
             }
@@ -174,6 +193,8 @@ public class FileManager {
     /**
      * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
      * and pull out all incorrect answers to the question.
+     *
+     * @final.requirement Regex
      *
      * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers.
      * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer).

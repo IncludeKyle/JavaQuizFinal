@@ -3,9 +3,11 @@ package proctortest;
 import java.util.ArrayList;
 
 /**
+ * Question class that holds all the information of a single question for the test.
+ *
  * date    11-21-18
  *
- * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck Insert group names)
+ * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck)
  **/
 
 public class Question implements Comparable<Question> {

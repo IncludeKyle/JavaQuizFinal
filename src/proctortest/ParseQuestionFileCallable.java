@@ -7,9 +7,14 @@ import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
 /**
+ * A callable class that handles opening up portions of a file and parsing the question
+ * information that we need within and storing that information in Question objects.
+ *
+ * @final.requirement Exceptions
+ *
  * Date    12-03-18
  *
- * @author (Brandon Jumbeck, Insert group names)
+ * @author (Brandon Jumbeck)
  **/
 
 // TODO Brandon: Clean up and document this file more.
@@ -58,6 +63,8 @@ class ParseQuestionFileCallable implements Callable {
      * Parses the file it has been given from the starting point to the ending point (EOF if none was given) and takes
      * all the question information within that file and stores it in an ArrayList full of Question objects.
      *
+     * @final.requirement Exceptions
+     *
      * @return An ArrayList full of Question objects that represent all the questions that have been parsed by this callable
      * @throws Exception Can throw exceptions related to file IO.
      */
@@ -95,6 +102,8 @@ class ParseQuestionFileCallable implements Callable {
      * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
      * and pull out all incorrect answers to the question.
      *
+     * @final.requirement Regex
+     *
      * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers
      * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer)
      */
@@ -112,6 +121,8 @@ class ParseQuestionFileCallable implements Callable {
     /**
      * Uses the regex "[(].[)].*" to search through the strings that were passed to the method
      * and pull out all incorrect answers to the question.
+     *
+     * @final.requirement Regex
      *
      * @param questionComponents An ArrayList of strings that contains lines to be searched for the wrong answers
      * @return An ArrayList of Strings that contains every line that matches the "[(].[)].*" regex (Is a wrong answer)
