@@ -67,7 +67,7 @@ public class ProctorTest {
                 // TODO: If we have time, refactor this menu into something that isn't copy and pasted in both conditions
                 int menuChoice;
                 do {
-                    System.out.println("\n\n\n\n\n\n");
+                    System.out.println("\n\n\n");
                     TestUtilities.displayTestBanner();
                     System.out.println("\n1 - Retake the same test.\n2 - Take a new test.\n3 - Exit Program.");
 

@@ -62,6 +62,9 @@ public class FileManager {
         ArrayList<Question> fullQuestionBank = new ArrayList<>(questBankFuture1.get());
         fullQuestionBank.addAll(questBankFuture2.get());
 
+        // End the threads
+        threadPool.shutdown();
+
         return fullQuestionBank;
     }
 
