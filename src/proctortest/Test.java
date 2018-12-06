@@ -1,5 +1,6 @@
 package proctortest;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,6 +13,7 @@ import java.util.Scanner;
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck, Insert group names)
  **/
 public class Test extends TestUtilities {
+    private FileManager fileManager;
     private ArrayList<Question> questionBank;
     private int totalQuestionsAsked = 0;
     private ArrayList<String> listOfChapters = new ArrayList<>(); // Stores each unique test chapter
@@ -23,19 +25,25 @@ public class Test extends TestUtilities {
     private int totalCorrect = 0;
     private double percentScore = 100;
 
-    public Test(ArrayList<Question> questionList) {
-        this.questionBank = questionList;
+    /**
+     * @param questionList Question list to use for the test.
+     * @param fileManager  The main file manager for the project, it is needed to write to the users output file the results.
+     */
+    public Test(ArrayList<Question> questionList, FileManager fileManager) {
+        this.fileManager = fileManager;
+        this.questionBank = questionList; // TODO: Remove after we refactor the output to file to be once only after the test is done.
     }
 
     /**
      * Runs a test using the questions stored in question bank.
      */
     public void runTest() {
-        // TODO Anyone: Do we need this counter here? We also have the totalQuestionsAsked counter which does basically the same thing.
         int questionsAsked = 1;
         String userAnswer;
         boolean setFirstChapter = false;
         Scanner scanner = new Scanner(System.in);
+
+        // Prompt user for the their information so that we can save their test to a file.
 
         displayTestBanner();
 
@@ -93,11 +101,20 @@ public class Test extends TestUtilities {
 
             // Test user answer against the correct answer, record the results based on
             // chapter and section
-            analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
+            boolean isCorrect = analyzeAnswer(userAnswer, question.getCorrectAnswer(), question.getChapter(), question.getSection());
 
             // Update the score
             percentScore = 100 * ((double) totalCorrect / (double) totalQuestionsAsked);
             percentScore = Math.floor(percentScore * 100) / 100;
+
+            // Write the users data to the output file
+            // TODO: Again remove this after we refactor so that we don't need to write to a file after each question
+            // instead have it after each test is done.
+            try {
+                fileManager.appendUserStatsToFile(questionsAsked, question, userAnswer, percentScore, isCorrect);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
             // Display results after user answers a question in terminal 
             System.out.println("Answer is " + question.getCorrectAnswer());
@@ -153,13 +170,15 @@ public class Test extends TestUtilities {
     /**
      * Tests the user's answer against the correct answer and then record the results based
      * on the question's chapter and section that it's content originated from.
-     *
-     * @param answer        The answer given for the question.
+     *  @param answer        The answer given for the question.
      * @param correctAnswer The correct answer for the question.
      * @param chapter       The chapter the question's content originated from.
      * @param section       The section of the chapter the question's content originated from.
      */
-    private void analyzeAnswer(String answer, String correctAnswer, String chapter, String section) {
+    private boolean analyzeAnswer(String answer, String correctAnswer, String chapter, String section) {
+        // Increment +1 every time this method is called to keep track of how many
+        // questions were asked
+        totalQuestionsAsked++;
 
         // Compare answer and correct answer
         if (correctAnswer.charAt(1) == answer.charAt(0)) {
@@ -175,6 +194,8 @@ public class Test extends TestUtilities {
                 chapterIndex++; // Update chapter score index +1 to move to next chapter
                 chapterScore[chapterIndex]++; // Add +1 point to the respective chapter score
             }
+
+            return true;
         } else {
             System.out.println("< Wrong!>");
 
@@ -182,10 +203,8 @@ public class Test extends TestUtilities {
                 currentChapter = chapter.toString(); // Update current chapter
                 chapterIndex++; // Update chapter score index +1 to move to next chapter
             }
-        }
 
-        // Increment +1 every time this method is called to keep track of how many
-        // questions were asked
-        totalQuestionsAsked++;
+            return false;
+        }
     }
 }

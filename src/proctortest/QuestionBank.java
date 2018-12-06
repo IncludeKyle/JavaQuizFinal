@@ -1,6 +1,5 @@
 package proctortest;
 
-import java.io.File;
 import java.util.*;
 
 /**
@@ -23,20 +22,12 @@ public class QuestionBank {
     /**
      * Creates a questionBank
      *
-     * @param questionBank
+     * @param allQuestions All possible question's available.
      */
-    public QuestionBank(File questionBank) {
-        try {
-            // TODO Brandon: Create a speed test to compare the computational time between the threaded and non-threaded versions.
-            FileManager fileManager = new FileManager();
-            questionsBank = fileManager.loadQuestionBankConcurrent(questionBank);
-            // ArrayList<Question> nonThreadedQuestionBank = fileManager.loadQuestionBank(questionBank);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+    public QuestionBank(ArrayList<Question> allQuestions) {
         // Sort questionBank list in ascending order
-        Collections.sort(questionsBank);
+        this.questionsBank = allQuestions;
+        Collections.sort(this.questionsBank);
     }
 
     /**

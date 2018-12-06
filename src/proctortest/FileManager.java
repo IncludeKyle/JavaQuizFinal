@@ -2,7 +2,10 @@ package proctortest;
 
 
 import java.io.*;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.concurrent.*;
 
@@ -16,6 +19,9 @@ import java.util.concurrent.*;
 // TODO Brandon: Refactor the non-concurrent question bank loading a bit and implement speed testing between the two.
 
 public class FileManager {
+    private Scanner scanner = new Scanner(System.in);
+    private String userOutputFile;
+
     /**
      * Multi-threaded solution which parses questions from the file that is passed in to the questionBankFile parameter.
      * It does this by using 2 threads and splitting the file in roughly half to concurrently read each portion's questions
@@ -62,6 +68,9 @@ public class FileManager {
         ArrayList<Question> fullQuestionBank = new ArrayList<>(questBankFuture1.get());
         fullQuestionBank.addAll(questBankFuture2.get());
 
+        // End the threads
+        threadPool.shutdown();
+
         return fullQuestionBank;
     }
 
@@ -102,23 +111,46 @@ public class FileManager {
         return questionBank;
     }
 
+    // TODO: If time refactor this method so that it doesn't write to a file after every question.
+    // Instead it should only write the results to a file after the whole test is finished to be more optimized.
+    // Writing to a disk is slow. It is also missing the total percentage correct.
     /**
-     * Takes a file and a string and then appends that string to the file given.
+     * Save all the user's results from his/her test to a file.
      *
-     * @param file          The file that this method should append to.
-     * @param stringToWrite The string that we want to append to the file.
+     * @param questionNum The current question number.
+     * @param question A Question object that holds information about the question taken.
+     * @param userAnswer The answer the user chose.
      */
-    public void appendToFile(File file, String stringToWrite) {
-        try {
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file, true));
-            bufferedWriter.write(stringToWrite);
+    // Save user results to text file
+    void appendUserStatsToFile(int questionNum, Question question, String userAnswer, double percent, boolean isAnswerCorrect) throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(userOutputFile, true));
+        bw.newLine();
+        bw.write("Question:" + questionNum);
+        bw.newLine();
+        bw.write(question.getQuestion());
+        bw.newLine();
+        bw.write(question.getAllAnswers().toString());
+        bw.newLine();
+        bw.write("Your answer is: " + userAnswer);
+        bw.newLine();
+        bw.write("The correct answer is: " + question.getCorrectAnswer());
+        bw.newLine();
+        bw.write("Chapter: " + question.getChapter());
+        bw.newLine();
+        bw.write("Section: " + question.getSection());
+        bw.newLine();
+        bw.write("Current total percent correct: " + String.valueOf(percent));
+        bw.newLine();
+        bw.write(isAnswerCorrect ? "< Correct! >" : "< Wrong! >");
+        bw.newLine();
+        bw.flush();
+        bw.close();
+    }
 
-            bufferedWriter.newLine();
-            bufferedWriter.flush();
-            bufferedWriter.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
+    // Scan userName for text file name
+    void setUsernameForFile(String userName) {
+        System.out.println(Paths.get("").toAbsolutePath());
+        userOutputFile = Paths.get("").toAbsolutePath() + "/UserTests/" + userName + "_" + new SimpleDateFormat("yyyy-MM-dd HHmm'.txt'").format(new Date());
     }
 
     // TODO Brandon: These two methods below are also inside of ParseQuestionFileCallable, would like to figure out how to make them in 1 place.
