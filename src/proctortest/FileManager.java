@@ -2,7 +2,6 @@ package proctortest;
 
 
 import java.io.*;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -149,8 +148,7 @@ public class FileManager {
 
     // Scan userName for text file name
     void setUsernameForFile(String userName) {
-        System.out.println(Paths.get("").toAbsolutePath());
-        userOutputFile = Paths.get("").toAbsolutePath() + "/UserTests/" + userName + "_" + new SimpleDateFormat("yyyy-MM-dd HHmm'.txt'").format(new Date());
+        userOutputFile = userName + "_" + new SimpleDateFormat("yyyy-MM-dd HHmm'.txt'").format(new Date());
     }
 
     // TODO Brandon: These two methods below are also inside of ParseQuestionFileCallable, would like to figure out how to make them in 1 place.
