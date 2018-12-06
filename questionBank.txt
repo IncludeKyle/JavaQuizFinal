@@ -571,3 +571,79 @@ S7.2
 (C) the sum of all the ints in the stream
 (D) nothing
 $
+?__________ involves using a superclass variable to invoke methods on superclass and subclass objects.
+C10
+S10.1
+(A) Encapsulation
+(B) Polymorphism<
+(C) Inheritance
+(D) None of the above
+$
+?Casting a reference stored in a superclass variable to a subclass type is called _________
+C10
+S10.1
+(A) Downcasting<
+(B) Upcasting
+(C) Sidecasting
+(D) Un-boxing
+$
+?If the same message is passed to objects of several different classes and all of them can react in a different way what is this feature called?
+C10
+S10.0
+(A) Overloading
+(B) Inheritance
+(C) Overriding
+(D) Polymorphism<
+$
+?Interfaces can contain static methods.
+C10
+S10.10
+(A) True<
+(B) False
+$
+?What happens if a class that implements an interface that has a default method in it does not override that default method?
+C10
+S10.10
+(A) It will generate an error.
+(B) It will use the implementation for that method that is defined in the interface.<
+(C) Nothing happens.
+(D) None of the above.
+$
+?Which version of Java was private Interface Methods released in?
+C10
+S10.11
+(A) Java SE 7
+(B) Java SE 1.4
+(C) Java SE 8
+(D) Java SE 9<
+$
+?Can constructors be private?
+C10
+S10.12
+(A) True<
+(B) False
+$
+?Which keyword is used by a class to implement an interface?
+C10
+S10.9
+(A) implement
+(B) import
+(C) implements<
+(D) extends
+$
+?Which of these can be used to fully abstract a class from it's implementation?
+C10
+S10.9
+(A) Classes
+(B) Interfaces<
+(C) Polymorphism
+(D) None of the above.
+$
+?What does the final keyword do when it is applied to a method?
+C10
+S10.8
+(A) Makes it so any subclasses cannot override that method.<
+(B) Makes it so that none of that methods parameters can be changed.
+(C) Both B and A.
+(D) None of the above.
+$
