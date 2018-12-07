@@ -22,7 +22,28 @@ public class ProctorTest {
         // Exception handling requirement fulfilled here. Though we use exceptions quite a bit throughout
         // the program most are propagated back to around this main method.
         try {
+
+            /*
+             * @final.extra_credit Extra credit for timing the difference between the threaded version of
+             * loading the questionBank.txt file and the non-threaded version.
+             */
+            long startTime = System.nanoTime();
             allQuestions = fileManager.loadQuestionBankConcurrent(new File("questionBank.txt"));
+            long endTime = System.nanoTime();
+
+            long concurrentTotalTimeNano = endTime - startTime;
+
+            startTime = System.nanoTime();
+            ArrayList<Question> timeTestQuestion = fileManager.loadQuestionBank(new File("questionBank.txt"));
+            endTime = System.nanoTime();
+
+            long nonconcurrentTotalTimeNano = endTime - startTime;
+
+            System.out.println("-------- Extra Credit #2 --------");
+            System.out.println("Measuring execution times between concurrent loading of the questionBank.txt and non-concurrent\n\n");
+            System.out.println("Concurrent Loading time:     " + concurrentTotalTimeNano + " ns");
+            System.out.println("Non-concurrent Loading time: " + nonconcurrentTotalTimeNano + " ns\n\n");
+
         } catch (Exception e) {
             e.printStackTrace();
             return;
