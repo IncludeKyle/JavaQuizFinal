@@ -433,8 +433,8 @@ $
 C16
 S16
 (A) myString2 = new String(x);
-(B) Double myDouble2 = new Double(x);
-(C) myDouble = myDouble2; <
+(B) Double myDouble2 = new Double(x);<
+(C) myDouble = myDouble2;
 (D) myFloat2 = new Float(x);
 $
 ? Suppose a reference variable of type Integer called myInt is already declared. Create an object of type Integer with the initial value of 1 and assign it to the reference variable myInt.

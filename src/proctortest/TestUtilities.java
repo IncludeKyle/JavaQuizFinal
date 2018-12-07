@@ -1,5 +1,7 @@
 package proctortest;
 
+import java.util.function.Function;
+
 /**
  * A utilities class which helps with various little things required in the test taking process
  * <p>
