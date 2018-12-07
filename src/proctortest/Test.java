@@ -8,6 +8,8 @@ import java.util.Scanner;
  * In charge of everything related to taking a single test. It get's passed a question
  * bank and uses that to administer the test.
  *
+ * @final.requirement Arrays, Regex
+ *
  * date    11-23-18
  *
  * @author (Paul Egbe, Kyle Blaha, Mackenzie Branch, Brandon Jumbeck, Brady Olson)
@@ -18,10 +20,9 @@ public class Test extends TestUtilities {
     private int totalQuestionsAsked = 0;
     private ArrayList<String> listOfChapters = new ArrayList<>(); // Stores each unique test chapter
     private int chapterIndex = 0;
-    private int[] chapterScore; // Parallel int array stores each chapter's score
+    private int[] chapterScore; // Parallel int array stores each chapter's score @final.requirement Arrays
     private String currentChapter;
 
-    private int totalQuestions = 0; // Keeps track of how many questions were asked during test
     private int totalCorrect = 0;
     private double percentScore = 100;
 
@@ -31,13 +32,14 @@ public class Test extends TestUtilities {
      */
     public Test(ArrayList<Question> questionList, FileManager fileManager) {
         this.fileManager = fileManager;
-        this.questionBank = questionList; // TODO: Remove after we refactor the output to file to be once only after the test is done.
+        this.questionBank = questionList;
     }
 
     /**
      * Runs a test using the questions stored in question bank.
      */
-    public void runTest() {
+    void runTest() {
+        chapterIndex = 0;
         int questionsAsked = 1;
         String userAnswer;
         boolean setFirstChapter = false;
@@ -50,17 +52,17 @@ public class Test extends TestUtilities {
         // Pull out each question object to see how many chapters there will be
         for (Question question : questionBank) {
             // Convert the StringBuilder chapter to a string
-            String convertedStringBuilder = question.getChapter().toString();
+            String chapterString = question.getChapter();
 
             // If chapter is not in list, add it to the list
-            if (!listOfChapters.contains(convertedStringBuilder)) {
+            if (!listOfChapters.contains(chapterString)) {
                 // Add that chapter to the chapter name list
-                listOfChapters.add(convertedStringBuilder);
+                listOfChapters.add(chapterString);
             }
 
             // Also set the starting chapter
             if (!setFirstChapter) {
-                currentChapter = convertedStringBuilder;
+                currentChapter = chapterString;
                 setFirstChapter = true;
             }
         }
@@ -127,7 +129,7 @@ public class Test extends TestUtilities {
 
     /**
      * Finds the resulting score value for each chapter and section
-     * <p>
+     *
      * Create an itemized score by chapter
      * S7 (3/3)
      * S14 (2/3)
@@ -135,7 +137,7 @@ public class Test extends TestUtilities {
      * ---------
      * Final: 92.5%
      */
-    public void analyzeFinalResult() {
+    void analyzeFinalResult() {
         double score = (double) totalCorrect / (double) totalQuestionsAsked;
         score *= 100; // Make it a percent %
         score = Math.floor(score * 100) / 100; // Round to 2 decimal places
@@ -159,6 +161,8 @@ public class Test extends TestUtilities {
 
     /**
      * Input validation to make sure the user entered.
+     *
+     * @final.requirement Regex
      *
      * @param userAnswer Which answer the user selected.
      * @return Boolean depending on whether it matches the "[A]||[B]||[C]||[D]||[T]||[F]" regex.
@@ -187,10 +191,10 @@ public class Test extends TestUtilities {
 
             // If this detects that chapter is != currentChapter
             // it knows the chapter has changed and it will update accordingly
-            if (chapter.toString().equals(currentChapter)) {
+            if (chapter.equals(currentChapter)) {
                 chapterScore[chapterIndex]++; // Add +1 point to the respective chapter score
             } else {
-                currentChapter = chapter.toString(); // Update current chapter
+                currentChapter = chapter; // Update current chapter
                 chapterIndex++; // Update chapter score index +1 to move to next chapter
                 chapterScore[chapterIndex]++; // Add +1 point to the respective chapter score
             }
@@ -199,7 +203,7 @@ public class Test extends TestUtilities {
         } else {
             System.out.println("< Wrong!>");
 
-            if (!chapter.toString().equals(currentChapter)) {
+            if (!chapter.equals(currentChapter)) {
                 currentChapter = chapter.toString(); // Update current chapter
                 chapterIndex++; // Update chapter score index +1 to move to next chapter
             }
